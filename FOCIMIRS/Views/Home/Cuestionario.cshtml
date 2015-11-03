@@ -1,0 +1,433 @@
+﻿@using FOCIMIRS.Models
+@using System.Data.Linq
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Cuestionario";
+}
+@helper PrintPreguntaR(Preguntas p, int j)
+{
+    List<amb_respuestas_temp> lista = new List<amb_respuestas_temp>();
+    amb_cuestionario_lleno x = new amb_cuestionario_lleno();
+    x = (amb_cuestionario_lleno)ViewBag.Savecu;
+    if (p.PadreId == -1)
+    {
+        lista = x.amb_respuestas_temps.Where(amb_respuestas_temp => amb_respuestas_temp.pregunta_id == p.Pregunta.pregunta_id).ToList();
+    }
+    else
+    {
+        lista = x.amb_respuestas_temps.Where(amb_respuestas_temp => amb_respuestas_temp.pregunta_id == p.Pregunta.pregunta_id &&
+                                            amb_respuestas_temp.preguntaP_id == p.PadreId).ToList();
+    }
+    if (j != 0)
+    {
+        <div class="col-md-12">
+            @{string pe = j.ToString() + "." + p.Pregunta.pregunta;}
+            <strong>@pe</strong>
+        </div>
+    }
+    else
+    {
+        <div id=@p.PadreId.ToString()></div>
+        <div class="col-md-12">
+            <strong>@p.Pregunta.pregunta</strong>
+        </div>
+    }
+
+    foreach (amb_opcione i in p.Opcion)
+    {
+        <div class="col-md-12" style="padding-bottom: 10px">
+            @{
+        string pid = "";
+        string name = "";
+        amb_respuestas_temp r = new amb_respuestas_temp();
+        if (lista.Count > 0 ){
+            r = lista.Where(amb_respuestas_temp => amb_respuestas_temp.opcion_id == i.opcion_id).FirstOrDefault();
+        }
+        else { 
+            r = null;
+        }
+        if (p.PadreId != -1)
+        {
+            pid = p.PadreId.ToString() + "-";
+        }
+            }
+            @if ( (i.amb_tipo_opcion.tipo_nombre == "radio"  || i.amb_tipo_opcion.tipo_nombre == "checkbox") && r == null)
+            {
+
+                name = pid.Length > 0 ? @p.Pregunta.pregunta_id + "-" + pid + p.Pregunta.seccion_id.ToString() :
+                                         @p.Pregunta.pregunta_id + "-" + p.Pregunta.seccion_id.ToString();
+                string value = pid.Length > 0 ? "rd" + i.opcion_id : "r" + i.opcion_id;
+
+                <input type=@i.amb_tipo_opcion.tipo_nombre name=@name value=@value >@i.opcion
+            }
+            else if (i.amb_tipo_opcion.tipo_nombre == "radio" || i.amb_tipo_opcion.tipo_nombre == "checkbox" && r != null)
+            {
+                name = pid.Length > 0 ? @p.Pregunta.pregunta_id + "-" + pid + p.Pregunta.seccion_id.ToString() :
+                             @p.Pregunta.pregunta_id + "-" + p.Pregunta.seccion_id.ToString();
+                string value = pid.Length > 0 ? "rd" + i.opcion_id : "r" + i.opcion_id;
+
+                <input type=@i.amb_tipo_opcion.tipo_nombre name=@name value=@value checked>@i.opcion
+            }
+            else if (i.amb_tipo_opcion.tipo_nombre == "numeric")
+            {
+                name = pid.Length > 0 ? "d" + @p.Pregunta.pregunta_id + "-" + pid + p.Pregunta.seccion_id.ToString() + "-" + i.opcion_id.ToString() :
+                                        @p.Pregunta.pregunta_id + "-" + p.Pregunta.seccion_id.ToString() + "-" + i.opcion_id.ToString();
+                string val = r == null ? "" : r.respuesta;
+                <input type=@i.amb_tipo_opcion.tipo_nombre name=@name onkeypress="return event.charCode >= 48 && event.charCode <= 57" value= @val>@i.opcion
+
+            }
+            else
+            {
+                name = pid.Length > 0 ? "d" + @p.Pregunta.pregunta_id + "-" + pid + p.Pregunta.seccion_id.ToString() + "-" + i.opcion_id.ToString() :
+                                         @p.Pregunta.pregunta_id + "-" + p.Pregunta.seccion_id.ToString() + "-" + i.opcion_id.ToString();
+                string val = r == null ? "" : r.respuesta;
+                <input type=@i.amb_tipo_opcion.tipo_nombre name=@name value="@val">@i.opcion
+
+            }
+        </div>
+    }
+    if (p.Subpreguntas.Count > 0)
+    {
+        <div>
+            <div class="col-md-12" id=@p.Pregunta.pregunta_id.ToString() >
+
+                <ul style="list-style:none">
+                    @foreach (Preguntas i in p.Subpreguntas)
+                    {
+                        string name = @p.Pregunta.pregunta_id + "-" + @i.Pregunta.pregunta_id;
+                        <li id=@name>@PrintPreguntaR(i, 0)</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+}
+
+
+@helper PrintPregunta(Preguntas p, int j)
+{
+    if (j != 0)
+    {
+        <div class="col-md-12">
+            @{string pe = j.ToString() + "." + p.Pregunta.pregunta;}
+            <strong>@pe</strong>
+        </div>
+    }
+    else
+    {
+        <div id=@p.PadreId.ToString()></div>
+        <div class="col-md-12">
+            <strong>@p.Pregunta.pregunta</strong>
+        </div>
+    }
+
+    foreach (amb_opcione i in p.Opcion)
+    {
+        <div class="col-md-12" style="padding-bottom: 10px">
+            @{   string pid = "";
+               string name = "";
+               if (p.PadreId != -1)
+               {
+                   pid = p.PadreId.ToString() + "-";
+               }
+            }
+            @if (i.amb_tipo_opcion.tipo_nombre == "radio" || i.amb_tipo_opcion.tipo_nombre == "checkbox")
+            {
+
+                name = pid.Length > 0 ? @p.Pregunta.pregunta_id + "-" + pid + p.Pregunta.seccion_id.ToString() :
+                                         @p.Pregunta.pregunta_id + "-" + p.Pregunta.seccion_id.ToString();
+                string value = pid.Length > 0 ? "rd" + i.opcion_id : "r" + i.opcion_id;
+
+                <input type=@i.amb_tipo_opcion.tipo_nombre name=@name value=@value>@i.opcion
+            }
+            else if (i.amb_tipo_opcion.tipo_nombre == "numeric")
+            {
+                name = pid.Length > 0 ? "d" + @p.Pregunta.pregunta_id + "-" + pid + p.Pregunta.seccion_id.ToString() + "-" + i.opcion_id.ToString() :
+                                        @p.Pregunta.pregunta_id + "-" + p.Pregunta.seccion_id.ToString() + "-" + i.opcion_id.ToString();
+                <input type=@i.amb_tipo_opcion.tipo_nombre name=@name onkeypress="return event.charCode >= 48 && event.charCode <= 57">@i.opcion
+
+            }
+            else
+            {
+                name = pid.Length > 0 ? "d" + @p.Pregunta.pregunta_id + "-" + pid + p.Pregunta.seccion_id.ToString() + "-" + i.opcion_id.ToString() :
+                             @p.Pregunta.pregunta_id + "-" + p.Pregunta.seccion_id.ToString() + "-" + i.opcion_id.ToString();
+                <<input type=@i.amb_tipo_opcion.tipo_nombre name=@name>@i.opcion
+
+            }
+        </div>
+    }
+    if (p.Subpreguntas.Count > 0)
+    {
+        <div>
+            <div class="col-md-12" id=@p.Pregunta.pregunta_id.ToString() style="display:none">
+
+                <ul style="list-style:none">
+                    @foreach (Preguntas i in p.Subpreguntas)
+                    {
+                        string name = @p.Pregunta.pregunta_id + "-" + @i.Pregunta.pregunta_id;
+                        <li id=@name>@PrintPregunta(i, 0)</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+}
+@helper PrintPregunta2(Preguntas p, int pi)
+{
+    <div class="row">
+        <div class="col-md-6">
+            @{ string pe = (pi + 1).ToString() + "." + p.Pregunta.pregunta;}
+            <strong>@pe</strong>
+        </div>
+        @{ string pid = "";
+         string name = "";
+         
+         if (@p.PadreId != -1)
+         {
+             pid = @p.PadreId.ToString() + "-";
+         }
+        }
+        @{ name = pid.Length > 0 ? "d" + @p.Pregunta.pregunta_id + "-" + pid + @p.Pregunta.seccion_id.ToString() + "-" + @p.Opcion[0].opcion_id.ToString() :
+                        @p.Pregunta.pregunta_id + "-" + @p.Pregunta.seccion_id.ToString() + "-" + @p.Opcion[0].opcion_id.ToString();}
+        <div class="col-md-6">
+            @{
+                
+                if (ViewBag.SaveCu == null) 
+                { 
+                    <input type=@p.Opcion[0].amb_tipo_opcion.tipo_nombre onfocus="this.oldvalue = this.value" value="0" name=@name onchange="sumSubTotal(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57">@p.Opcion[0].opcion
+                }
+                else
+                {
+                    List<amb_respuestas_temp> list = new List<amb_respuestas_temp>(ViewBag.SaveCu.amb_respuestas_temps); 
+                    
+                <input type=@p.Opcion[0].amb_tipo_opcion.tipo_nombre onfocus="this.oldvalue = this.value" name=@name onchange="sumSubTotal(this)" 
+                       onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+                       value =@list.Where(amb_respuestas_temp => amb_respuestas_temp.pregunta_id ==  p.Pregunta.pregunta_id && amb_respuestas_temp.opcion_id == p.Opcion[0].opcion_id).First().respuesta>@p.Opcion[0].opcion
+                    }
+            }
+        </div>
+    </div>
+    <br />
+
+}
+<center><h2>Cuestionario creación Base de Datos</h2></center>
+<div class="container">
+    @using (Html.BeginForm("EnviarCuestionario", "Home", FormMethod.Post))
+    {
+
+        <div class="row">
+            <div class="col-md-12" bgcolor="#5F497A"><span style="color:#FFF"><strong>&nbsp;Información General del Municipio/DM</strong></span></div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 "><h5>Provincia</h5></div>
+            <div class="col-md-3">
+                        <input class="form-control" type="text" value=@ViewBag.User.amb_provincia.NOM_PROVINCIA disabled>
+            </div>
+            <div class="col-md-1 "><h5>Municipio/DM</h5></div>
+            <div class="col-md-3">
+                @{
+         
+       <select class="form-control" onchange="selectdm()" id="InMunicipio" name="ComboBox">
+        @foreach (amb_municipio i in ViewBag.Municipios)
+        {
+            if (i.NOM_MUNICIPIO == ViewBag.Mun) { 
+                <option value="@i.NOM_MUNICIPIO" selected> @i.NOM_MUNICIPIO</option>
+            
+           }
+            else { 
+                <option value="@i.NOM_MUNICIPIO" > @i.NOM_MUNICIPIO</option>
+        }
+        }
+    </select>
+                }
+              
+            </div>
+            <div class="col-md-1"><h5>Fecha</h5></div>
+            <div class="col-md-3"><input class="form-control" type="text" value=@DateTime.Today.Date disabled></div>
+        </div>
+        <hr>
+        <div class="row">
+            @{ string alcalde = ViewBag.User.amb_provincia.Alcalde;
+             string alcaldetel = ViewBag.User.amb_provincia.AlcaldeTel;
+             string alcaldeMail = ViewBag.User.amb_provincia.AlcaldeMail;
+             string directorMail = ViewBag.User.amb_provincia.Director_PMail;
+             string director = ViewBag.User.amb_provincia.director_provincial_de_MA;
+             string directorTel = ViewBag.User.amb_provincia.Director_PTel;
+             string ornato = ViewBag.User.amb_provincia.enc_de_ornato;
+             string ornatoTel = ViewBag.User.amb_provincia.OrnatoTel;
+             string ornatoMail = ViewBag.User.amb_provincia.OrnatoMail;
+             string ugam = ViewBag.User.amb_provincia.encargado_ugam;
+             string ugamTel = ViewBag.User.amb_provincia.UgamTel;
+             string ugamMail = ViewBag.User.amb_provincia.UgamMail;
+            }
+            <div class="col-md-2">Alcalde</div>
+            <div class="col-md-3"><input type="text" name="InAlcalde" class="form-control" value="@alcalde"></div>
+            <div class="col-md-1">Teléfono</div>
+            <div class="col-md-2"><input type="number" name="InAlcaldeTel" class="form-control" value="@alcaldetel"></div>
+            <div class="col-md-1">Email </div>
+            <div class="col-md-3"><input type="text" name="InAlcaldeMail" class="form-control" value="@alcaldeMail"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">Encargado de UGAM</div>
+            <div class="col-md-3"><input type="text" name="InUgam" class="form-control" value="@ugam"></div>
+            <div class="col-md-1">Teléfono</div>
+            <div class="col-md-2"><input type="number" name="InUgamTel" class="form-control" value=@ugamTel></div>
+            <div class="col-md-1">Email </div>
+            <div class="col-md-3"><input type="text" name="InUgamMail" class="form-control" value=@ugamMail></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">Enc. de Ornato y limpieza</div>
+            <div class="col-md-3"><input type="text" name="InOrnato" class="form-control" value="@ornato"></div>
+            <div class="col-md-1">Teléfono</div>
+            <div class="col-md-2"><input type="number" name="InOrnatoTel" class="form-control" value=@ornatoTel></div>
+            <div class="col-md-1">Email </div>
+            <div class="col-md-3"><input type="text" name="InOrnatoMail" class="form-control" value=@ornatoMail></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">Director Provincial de M.A. </div>
+            <div class="col-md-3"><input type="text" name="InMA" class="form-control" value="@director"></div>
+            <div class="col-md-1">Teléfono</div>
+            <div class="col-md-2"><input type="number" name="InMATel" class="form-control" value=@directorTel></div>
+            <div class="col-md-1">Email </div>
+            <div class="col-md-3"><input type="text" name="InMAMail" class="form-control" value=@directorMail></div>
+
+
+        </div>
+        <br>
+        <p>
+            <small>
+                Favor indicar <u><b>S</b></u> si la respuesta es "SI", <u><b>N</b></u> si la respuesta es "NO", y <u>
+                    <b>circular la respuesta</b>
+                </u> en el caso de que las opciones estén enumeradas. Si la pregunta <u>No Aplica</u>
+                para su Municipio/DM, favor indicar <b>N/A</b> en las opción de <b>Otros</b>
+            </small>
+        </p>
+        <br>
+        <h4>Información Requerida en base a los indicadores</h4>
+        for (int i = 0, count = 1; i < @ViewBag.secciones.Count; i++, count++)
+        {
+            <div class="row">
+                <div class="col-md-12 text-center" style="background-color:#5F497A">
+                    <strong><span style="color:#FFF"> @count .@ViewBag.secciones[i].Seccione.nombre</span></strong>
+                </div>
+            </div>
+
+
+            if (count != 6)
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Preguntas</h2>
+                    </div>
+                </div>
+                <hr />
+                for (int j = 0; j < @ViewBag.secciones[i].Pregunta.Count; j++)
+                {
+
+                    <div class="row">
+                        @if (ViewBag.SaveCu == null)
+                        {
+
+                            @PrintPregunta(ViewBag.secciones[i].Pregunta[j], j + 1)
+
+                        }
+                        else
+                        {
+                            @PrintPreguntaR(ViewBag.secciones[i].Pregunta[j], j + 1)
+                        }
+
+                    </div>
+                    <hr />
+                }
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Formatos de Ingreso</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Ingresos(RD$)</h3>
+                    </div>
+                </div>
+                <hr />
+                for (int j = 0; j < 12; j++)
+                {
+
+                    @PrintPregunta2(@ViewBag.secciones[i].Pregunta[j], j)
+
+                }
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>SubTotal:</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 id="subtotal">0</h4>
+                    </div>
+
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Formatos de Gastos</h2>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Costos(RD$)</h3>
+                    </div>
+                </div>
+                <hr />
+                for (int j = 12; j < 21; j++)
+                {
+                    @PrintPregunta2(@ViewBag.secciones[i].Pregunta[j], j)
+                }
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>SubTotal:</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 id="subtotal2">0</h4>
+                    </div>
+                </div>
+                <hr />
+                for (int j = 21; j < @ViewBag.secciones[i].Pregunta.Count; j++)
+                {
+                    @PrintPregunta2(@ViewBag.secciones[i].Pregunta[j], j)
+                }
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>SubTotal:</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 id="subtotal3"> 0</h4>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Total:</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><span id="total">0</span></h4>
+                    </div>
+                </div>
+
+            }
+        }
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    <input id="submit" type="submit" name="submitbutton" value="Enviar" onclick="RemoveHidden()" _
+                           class="btn btn-green" style="color:white;background-color:#77B32F;border-color:#689C29;" />
+                    &nbsp;
+                    <input id="submit" type="submit" name="submitbutton" value="Guardar" onclick="RemoveHidden()" _
+                           class="btn btn-primary" />
+                </p>
+                <br /><br />
+            </div>
+        </div>
+
+
+    }
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Js/Cuestionarios.js")"></script>

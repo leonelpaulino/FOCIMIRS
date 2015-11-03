@@ -1,0 +1,103 @@
+/*Contactos*/
+#map{
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	margin-bottom: 15px;
+	border: solid #C9C9C9 1px;
+}
+.contactos > h3{
+	margin:0;
+}
+.contactos > p{
+	margin-top:0;
+	margin-bottom:5px;
+}
+.contactos > p > span{
+	margin-right: 5px;
+}
+form.contact-formHolder{
+	height: 250px;
+}
+form.contact-form ul,
+form.contact-form ul > li{
+	margin: 0;
+	padding: 0;	
+}
+form.contact-form{
+	list-style: none;
+}
+form.contact-form label{
+	display: block;
+	font-weight: normal;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+form.contact-form :last-child > label{
+	margin-top: 0;
+}
+form.contact-form  input[type="text"],
+form.contact-form  input[type="email"]{
+	width: 100%;
+	min-width: 100%;
+	height: 28px;
+	line-height: 28px;
+	border-style: solid;
+	border-width: 3px;
+	padding: 0 8px;
+	font-size: 14px;
+	color: #000;
+	font-style: italic;
+	margin: 0 0 5px 0;
+}
+form.contact-form input[type="submit"]{
+	border:0;
+	margin-top: 10px;
+	float: right;
+	color: #fff;
+	padding: 5px 25px;
+}
+form.contact-form  textarea{
+	width: 100%;
+	height: 70px;
+	line-height: 28px;
+	border-style: solid;
+	border-width: 3px;
+	padding: 0 8px;
+	font-size: 14px;
+	color: #000;
+	font-style: italic;
+}
+.statusMessage {
+  display: none;
+  margin: 0 auto;
+  height: 2em;
+  padding: 20px 0 40px 0;
+  position: absolute;
+  top: 77px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.statusMessage p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 991px) {
+	#map{
+		height: 250px;
+	}
+}
+
+@media (max-width: 767px) {
+	#map{
+		height: 200px;
+	}
+	h1.title.escribenos{
+		border-top: solid 2px #C9C9C9;
+		padding-top: 5px;
+		margin-top: 15px;
+	}
+}

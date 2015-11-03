@@ -1,0 +1,90 @@
+﻿@using FOCIMIRS.Models
+@{
+    ViewBag.Title = "Lista de cuestionarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>CUESTIONARIOS LLENOS DEL @ViewBag.Prov</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Provincia</h3>
+        </div>
+        <div class="col-md-6">
+            <h3>Municipio</h3>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-6">
+            @if (ViewBag.Provincias != null)
+            {
+                <select class="form-control" onchange="selectprov()" id="InProvincia" name="ComboBox">
+                    @foreach (amb_provincia i in ViewBag.Provincias)
+                    {
+                        if (i.NOM_PROVINCIA == ViewBag.Prov)
+                        {
+                            <option value="@i.NOM_PROVINCIA" selected> @i.NOM_PROVINCIA</option>
+
+                        }
+                        else
+                        {
+                            <option value="@i.NOM_PROVINCIA"> @i.NOM_PROVINCIA</option>
+                        }
+                    }
+                </select>
+            }
+            else
+            {
+                <input class="form-control" disabled value=@ViewBag.Prov id="InProvincia" />
+            }
+        </div>
+        <div class="col-md-6">
+                    <select class="form-control" onchange= "selectdml()"  id="InMunicipio" name="ComboBox">
+                
+                @foreach (amb_municipio i in ViewBag.Municipios)
+            {
+                if (i.NOM_MUNICIPIO == ViewBag.Mun.NOM_MUNICIPIO)
+                {
+                        <option value="@i.NOM_MUNICIPIO" selected> @i.NOM_MUNICIPIO</option>
+
+                    }
+                    else
+                    {
+                        <option value="@i.NOM_MUNICIPIO"> @i.NOM_MUNICIPIO</option>
+                    }
+                }
+            </select>
+        </div>
+    </div>
+    @if (ViewBag.Cuestionarios == null)
+    {
+        <h2>No se han llenado cuestionarios en este municipio</h2>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Municipio</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (amb_cuestionario_lleno cuestionario in ViewBag.Cuestionarios)
+                {
+
+                    <tr>
+                        <td> @cuestionario.fecha.Value.Day/@cuestionario.fecha.Value.Month/@cuestionario.fecha.Value.Year</td>
+                        <td> @cuestionario.amb_municipio.NOM_MUNICIPIO</td>
+                        <td> @Html.ActionLink("Imprimir", "Details", new { cuestionarioid = cuestionario.cuestionario_llenoid }, new { target = "_blank" })</td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+    }
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Js/CuestionarioList.js")"></script>
+

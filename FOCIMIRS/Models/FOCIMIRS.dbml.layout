@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.5, 25.875" name="FOCIMIRS">
+  <DataContextMoniker Name="/FOCIMIRSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c4e24783-40ae-403e-8d7e-9e0c310205f2" absoluteBounds="0.75, 6.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_cuestionario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a6aeacd-0a3a-4ca8-91e7-e0500651e2ab" absoluteBounds="0.765, 7.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ce788cb-47aa-43a7-84fe-41b2f0c09602" absoluteBounds="14.25, 11.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_viajes_mensuale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3728d748-8e00-42fa-aecf-90752938644a" absoluteBounds="14.265, 12.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b38673c4-9d77-4795-8983-ddc092d4e39c" absoluteBounds="6.25, 8.125, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_cuestionario_lleno" />
+      <nestedChildShapes>
+        <elementListCompartment Id="713758bf-b486-46b5-bd6e-58c3c7a1a4c4" absoluteBounds="6.265, 8.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9905b2fb-5c5f-49ed-bf0a-10ffb22f5d7c" absoluteBounds="3.5, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_cuestionario_usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c0f8b8e-5869-4067-b4ef-686d854bf6f0" absoluteBounds="3.515, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8d7726fc-d3b1-4410-a404-cf6a2803411b" absoluteBounds="3.5, 9.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_municipio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="207d9797-2e11-4943-abda-2b2e7ce61cbd" absoluteBounds="3.515, 9.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="17ee3bab-95c3-4047-af59-40b5afe0162c" absoluteBounds="9, 8.5, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_municipios_Cuestionario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1618c951-1187-4005-8ef0-48bc919fb31b" absoluteBounds="9.015, 8.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4bf74dd2-18f5-4b9a-b853-e2ad2bf30a7b" absoluteBounds="3.5, 0.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_opcione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12db3cbf-2df7-4066-a5f0-08c47430407f" absoluteBounds="3.515, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b08ce6c3-1d1b-4633-9499-273b96b96b0b" absoluteBounds="6.25, 3.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_opciones_pregunta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b261e77c-2df5-46e4-a3ca-f9954df8f830" absoluteBounds="6.265, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26d78ad9-b364-4984-9cb8-a877f497255e" absoluteBounds="1.5, 24.375, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_permiso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5dc931d7-51de-40fb-b496-db5848b6f72a" absoluteBounds="1.5150000000000001, 24.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3091485d-c578-47a3-9d7c-79d619786ba3" absoluteBounds="4.25, 14.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_permisos_role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8dc0654c-d32d-404b-93a6-d61237fa04bc" absoluteBounds="4.265, 14.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef07bd08-f2d7-46c5-b76d-256addc24eb0" absoluteBounds="0.75, 3.875, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_pregunta_seccion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25f49a41-a196-4cf7-9570-86dd5fd083bd" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f365816f-4011-4d57-b56e-bb89562ad743" absoluteBounds="3.5, 3.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_pregunta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c33e7554-5157-4f72-911d-05571931d998" absoluteBounds="3.515, 4.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e36ff028-27fe-4f67-9455-1b8e70ca8684" absoluteBounds="1.5, 16.375, 2, 4.0785139973958309">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_provincia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e2c06ba-8eca-4381-bea0-78194d9fc17a" absoluteBounds="1.5150000000000001, 16.835, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="83d9397e-60af-461a-a485-381b4bf4ad8a" absoluteBounds="1.75, 21.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_regione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="37b5de70-ef4d-4db7-9c01-2824cf5bc2f6" absoluteBounds="1.7650000000000001, 22.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d44cbaa-fddc-4fa8-b6a0-f72899e970da" absoluteBounds="9, 5.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_respuesta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d34fc6c-77d2-49d0-94c9-6ef6f81fc323" absoluteBounds="9.015, 5.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb5b3c8c-3005-4a52-85bb-abc520abc1f1" absoluteBounds="12, 6.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_respuestas_temp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36a47455-aa75-4577-962d-aed656f5553d" absoluteBounds="12.015, 6.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3bb569a8-1445-4a3f-94a3-d89de4a3903d" absoluteBounds="1.5, 14.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="69e490c3-0ca6-45ea-953f-09ab54c9702f" absoluteBounds="1.5150000000000001, 14.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56eacccb-4a1f-4c81-86ec-2016275b218e" absoluteBounds="6.25, 5.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_subPregunta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8ed210a-133d-41e7-92e3-3c2f37eed513" absoluteBounds="6.265, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f279542f-af5b-40f0-96a0-12f4489c227c" absoluteBounds="0.75, 1.375, 2, 1.1939925130208338">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_tipo_opcion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d1704f3-4d95-4ac1-9e55-13be4afbd076" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf7d8d5d-2678-4493-93f3-5af0ad582542" absoluteBounds="8.75, 12.375, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_tipo_vehiculo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f15db343-caa6-48a3-8db6-be4539e5bb63" absoluteBounds="8.765, 12.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="72e21f5b-9f3b-47bf-aa1b-ce72fbf7191b" absoluteBounds="0.75, 11.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="345933a7-a7ca-4eaf-a38a-78ade87b1f62" absoluteBounds="0.765, 11.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43e2371c-8d74-4c13-a0e1-cd18a4824139" absoluteBounds="11.5, 11.5, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/FOCIMIRSDataContext/amb_vehiculo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e94b842a-37d2-4943-b297-e4ddceddd9f4" absoluteBounds="11.515, 11.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 8.1362939453125); (5.875 : 8.5112939453125); (5.875 : 7.75); (6.25 : 8.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_cuestionario_usuario/amb_cuestionario_usuario_amb_cuestionario_lleno" />
+      <nodes>
+        <classShapeMoniker Id="9905b2fb-5c5f-49ed-bf0a-10ffb22f5d7c" />
+        <classShapeMoniker Id="b38673c4-9d77-4795-8983-ddc092d4e39c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.47199625651042); (3.04166666666667 : 7.47199625651042 : JumpStart); (3.20833333333333 : 7.47199625651042 : JumpEnd); (3.5 : 7.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_cuestionario/amb_cuestionario_amb_cuestionario_usuario" />
+      <nodes>
+        <classShapeMoniker Id="c4e24783-40ae-403e-8d7e-9e0c310205f2" />
+        <classShapeMoniker Id="9905b2fb-5c5f-49ed-bf0a-10ffb22f5d7c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.0200512695312); (6.25 : 10.0200512695312)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_municipio/amb_municipio_amb_cuestionario_lleno" />
+      <nodes>
+        <classShapeMoniker Id="8d7726fc-d3b1-4410-a404-cf6a2803411b" />
+        <classShapeMoniker Id="b38673c4-9d77-4795-8983-ddc092d4e39c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 9.38544840494792); (9 : 9.38544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_cuestionario_lleno/amb_cuestionario_lleno_amb_municipios_Cuestionario" />
+      <nodes>
+        <classShapeMoniker Id="b38673c4-9d77-4795-8983-ddc092d4e39c" />
+        <classShapeMoniker Id="17ee3bab-95c3-4047-af59-40b5afe0162c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 11.1290511067708); (10 : 11.1290511067708); (10 : 10.2708968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_municipio/amb_municipio_amb_municipios_Cuestionario" />
+      <nodes>
+        <classShapeMoniker Id="8d7726fc-d3b1-4410-a404-cf6a2803411b" />
+        <classShapeMoniker Id="17ee3bab-95c3-4047-af59-40b5afe0162c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.44314697265625); (7.25 : 1.44314697265625); (7.25 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_opcione/amb_opcione_amb_opciones_pregunta" />
+      <nodes>
+        <classShapeMoniker Id="4bf74dd2-18f5-4b9a-b853-e2ad2bf30a7b" />
+        <classShapeMoniker Id="b08ce6c3-1d1b-4633-9499-273b96b96b0b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 24.9719962565104); (5.25 : 24.9719962565104); (5.25 : 15.5689925130208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_permiso/amb_permiso_amb_permisos_role" />
+      <nodes>
+        <classShapeMoniker Id="26d78ad9-b364-4984-9cb8-a877f497255e" />
+        <classShapeMoniker Id="3091485d-c578-47a3-9d7c-79d619786ba3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.47199625651042); (6.25 : 4.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_pregunta/amb_pregunta_amb_opciones_pregunta" />
+      <nodes>
+        <classShapeMoniker Id="f365816f-4011-4d57-b56e-bb89562ad743" />
+        <classShapeMoniker Id="b08ce6c3-1d1b-4633-9499-273b96b96b0b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.87591745577925); (3.125 : 6.50091745577925); (3.125 : 4.41429768880208); (3.5 : 4.41429768880208)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_cuestionario/amb_cuestionario_amb_pregunta" />
+      <nodes>
+        <classShapeMoniker Id="c4e24783-40ae-403e-8d7e-9e0c310205f2" />
+        <classShapeMoniker Id="f365816f-4011-4d57-b56e-bb89562ad743" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.80414510091146); (3.04166666666667 : 4.80414510091146 : JumpStart); (3.20833333333333 : 4.80414510091146 : JumpEnd); (3.5 : 4.80414510091146)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_pregunta_seccion/amb_pregunta_seccion_amb_pregunta" />
+      <nodes>
+        <classShapeMoniker Id="ef07bd08-f2d7-46c5-b76d-256addc24eb0" />
+        <classShapeMoniker Id="f365816f-4011-4d57-b56e-bb89562ad743" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 18.4142569986979); (3.875 : 18.4142569986979); (3.875 : 11.5304996744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_provincia/amb_provincia_amb_municipio" />
+      <nodes>
+        <classShapeMoniker Id="e36ff028-27fe-4f67-9455-1b8e70ca8684" />
+        <classShapeMoniker Id="8d7726fc-d3b1-4410-a404-cf6a2803411b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 21.75); (2.625 : 20.4535139973958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_regione/amb_regione_amb_provincia" />
+      <nodes>
+        <classShapeMoniker Id="83d9397e-60af-461a-a485-381b4bf4ad8a" />
+        <classShapeMoniker Id="e36ff028-27fe-4f67-9455-1b8e70ca8684" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 8.125); (8.625 : 7.75); (8.625 : 6.23159912109375); (9 : 6.23159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_cuestionario_lleno/amb_cuestionario_lleno_amb_respuesta" />
+      <nodes>
+        <classShapeMoniker Id="b38673c4-9d77-4795-8983-ddc092d4e39c" />
+        <classShapeMoniker Id="9d44cbaa-fddc-4fa8-b6a0-f72899e970da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.82097295898437); (7.16666666666667 : 1.82097295898437 : JumpStart); (7.33333333333333 : 1.82097295898437 : JumpEnd); (10 : 1.82097295898437); (10 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_opcione/amb_opcione_amb_respuesta" />
+      <nodes>
+        <classShapeMoniker Id="4bf74dd2-18f5-4b9a-b853-e2ad2bf30a7b" />
+        <classShapeMoniker Id="9d44cbaa-fddc-4fa8-b6a0-f72899e970da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.71875); (7.16666666666667 : 3.71875 : JumpStart); (7.33333333333333 : 3.71875 : JumpEnd); (9.4687475 : 3.71875); (9.4687475 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_pregunta/amb_pregunta_amb_respuesta" />
+      <nodes>
+        <classShapeMoniker Id="f365816f-4011-4d57-b56e-bb89562ad743" />
+        <classShapeMoniker Id="9d44cbaa-fddc-4fa8-b6a0-f72899e970da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.7500025); (7.16666666666667 : 3.7500025 : JumpStart); (7.33333333333333 : 3.7500025 : JumpEnd); (9.91666666666667 : 3.7500025 : JumpStart); (10.0833333333333 : 3.7500025 : JumpEnd); (10.5312525 : 3.7500025); (10.5312525 : 5.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_pregunta/amb_pregunta_amb_respuesta1" />
+      <nodes>
+        <classShapeMoniker Id="f365816f-4011-4d57-b56e-bb89562ad743" />
+        <classShapeMoniker Id="9d44cbaa-fddc-4fa8-b6a0-f72899e970da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 10.4992496744792); (9.91666666666667 : 10.4992496744792 : JumpStart); (10.0833333333333 : 10.4992496744792 : JumpEnd); (13 : 10.4992496744792); (13 : 8.2131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_cuestionario_lleno/amb_cuestionario_lleno_amb_respuestas_temp" />
+      <nodes>
+        <classShapeMoniker Id="b38673c4-9d77-4795-8983-ddc092d4e39c" />
+        <classShapeMoniker Id="bb5b3c8c-3005-4a52-85bb-abc520abc1f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.06532098632813); (13 : 1.06532098632813); (13 : 6.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_opcione/amb_opcione_amb_respuestas_temp" />
+      <nodes>
+        <classShapeMoniker Id="4bf74dd2-18f5-4b9a-b853-e2ad2bf30a7b" />
+        <classShapeMoniker Id="bb5b3c8c-3005-4a52-85bb-abc520abc1f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.1675439453125); (12.4687475 : 5.1675439453125); (12.4687475 : 6.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_pregunta/amb_pregunta_amb_respuestas_temp" />
+      <nodes>
+        <classShapeMoniker Id="f365816f-4011-4d57-b56e-bb89562ad743" />
+        <classShapeMoniker Id="bb5b3c8c-3005-4a52-85bb-abc520abc1f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 3.6874975); (7.16666666666667 : 3.6874975 : JumpStart); (7.33333333333333 : 3.6874975 : JumpEnd); (9.91666666666667 : 3.6874975 : JumpStart); (10.0833333333333 : 3.6874975 : JumpEnd); (12.9166666666667 : 3.6874975 : JumpStart); (13.0833333333333 : 3.6874975 : JumpEnd); (13.5312525 : 3.6874975); (13.5312525 : 6.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_pregunta/amb_pregunta_amb_respuestas_temp1" />
+      <nodes>
+        <classShapeMoniker Id="f365816f-4011-4d57-b56e-bb89562ad743" />
+        <classShapeMoniker Id="bb5b3c8c-3005-4a52-85bb-abc520abc1f1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 14.9719962565104); (3.79166666666667 : 14.9719962565104 : JumpStart); (3.95833333333333 : 14.9719962565104 : JumpEnd); (4.25 : 14.9719962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_role/amb_role_amb_permisos_role" />
+      <nodes>
+        <classShapeMoniker Id="3bb569a8-1445-4a3f-94a3-d89de4a3903d" />
+        <classShapeMoniker Id="3091485d-c578-47a3-9d7c-79d619786ba3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.17687968659856); (5.75 : 5.42687968659856); (5.75 : 5.22979497285657); (6.27020502714343 : 5.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_pregunta/amb_pregunta_amb_subPregunta" />
+      <nodes>
+        <classShapeMoniker Id="f365816f-4011-4d57-b56e-bb89562ad743" />
+        <classShapeMoniker Id="56eacccb-4a1f-4c81-86ec-2016275b218e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.19873716105769); (5.90625 : 5.60498716105769); (5.90625 : 5.42553757136418); (6.25 : 5.76928757136418)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_pregunta/amb_pregunta_amb_subPregunta1" />
+      <nodes>
+        <classShapeMoniker Id="f365816f-4011-4d57-b56e-bb89562ad743" />
+        <classShapeMoniker Id="56eacccb-4a1f-4c81-86ec-2016275b218e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.75564697265625); (3.5 : 1.75564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_tipo_opcion/amb_tipo_opcion_amb_opcione" />
+      <nodes>
+        <classShapeMoniker Id="f279542f-af5b-40f0-96a0-12f4489c227c" />
+        <classShapeMoniker Id="4bf74dd2-18f5-4b9a-b853-e2ad2bf30a7b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 11.3765374615385); (3.125 : 11.0015374615385); (3.125 : 7.07974612825521); (3.5 : 7.07974612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_usuario/amb_usuario_amb_cuestionario_usuario" />
+      <nodes>
+        <classShapeMoniker Id="72e21f5b-9f3b-47bf-aa1b-ce72fbf7191b" />
+        <classShapeMoniker Id="9905b2fb-5c5f-49ed-bf0a-10ffb22f5d7c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 14.375); (2.125 : 13.5304996744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_role/amb_role_amb_usuario" />
+      <nodes>
+        <classShapeMoniker Id="3bb569a8-1445-4a3f-94a3-d89de4a3903d" />
+        <classShapeMoniker Id="72e21f5b-9f3b-47bf-aa1b-ce72fbf7191b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.5 : 18.4142569986979); (1.1249995 : 18.4142569986979); (1.1249995 : 13.5304996744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_provincia/amb_provincia_amb_usuario" />
+      <nodes>
+        <classShapeMoniker Id="e36ff028-27fe-4f67-9455-1b8e70ca8684" />
+        <classShapeMoniker Id="72e21f5b-9f3b-47bf-aa1b-ce72fbf7191b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.5 : 12.9527498372396); (14.25 : 12.9527498372396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_vehiculo/amb_vehiculo_amb_viajes_mensuale" />
+      <nodes>
+        <classShapeMoniker Id="43e2371c-8d74-4c13-a0e1-cd18a4824139" />
+        <classShapeMoniker Id="1ce788cb-47aa-43a7-84fe-41b2f0c09602" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.75 : 12.9719962565104); (11.5 : 12.9719962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FOCIMIRSDataContext/amb_tipo_vehiculo/amb_tipo_vehiculo_amb_vehiculo" />
+      <nodes>
+        <classShapeMoniker Id="cf7d8d5d-2678-4493-93f3-5af0ad582542" />
+        <classShapeMoniker Id="43e2371c-8d74-4c13-a0e1-cd18a4824139" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

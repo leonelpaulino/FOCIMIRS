@@ -1,0 +1,94 @@
+/*slide css*/
+.slideHome .mensajeSlide{
+	background: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	margin-top: 25px;
+}
+.slideHome .mensajeSlide .titulo{
+	font-size: 24px;
+	line-height: 28px;
+	margin-bottom: 8px;
+	margin-top: 4px;
+	display: block;
+	color: #fff;
+}
+.slideHome .mensajeSlide .titulo a,
+.slideHome .mensajeSlide .titulo a:hover{
+	color: #fff;
+}
+.slideHome .mensajeSlide .descripcion{
+	color: #fff;
+	font-size: 12px;
+}
+.controlSlide{
+	position: absolute;
+	top: 46%;
+	background: rgba(255,255,255, .5);
+	padding: 8px;
+	border:solid #fff 1px;
+	font-size: 20px;
+	-webkit-border-radius:3px; 
+	-moz-border-radius:3px; 
+	border-radius:3px;
+}
+.slideHome .controlSlide:hover{
+	background: rgba(255,255,255, .7);
+}
+.slideHome .controlSlide:hover .glyphicon{
+	color: #6A6A6A;	
+}
+.controlSlide,
+.slideHome .controlSlide:hover,
+.slideHome .controlSlide:hover .glyphicon{
+	transition: background 0.5s;
+	-moz-transition: background 0.5s; /* Firefox 4 */
+	-webkit-transition: background 0.5s; /* Safari and Chrome */
+	-o-transition: background 0.5s; /* Opera */
+	transition: color 0.5s;
+	-moz-transition: color 0.5s; /* Firefox 4 */
+	-webkit-transition: color 0.5s; /* Safari and Chrome */
+	-o-transition: color 0.5s; /* Opera */
+
+}
+.controlSlide .glyphicon{
+	top:0;
+}
+.controlSlide span{
+	color: #949494;
+}
+.controlSlide.left{
+	left:0;
+	margin-left: 30px;
+}
+.controlSlide.right{
+	right: 0;
+	margin-right: 30px;
+}
+.slideHome .carousel-inner{
+	border:solid #EBEBEB 1px;
+	/*margin-top: 25px;*/
+	margin-bottom: 25px;
+}
+.carousel-indicators{
+	width:auto;
+	margin-left:0;
+	left: 3%;
+	text-align: left;
+}
+.slideHome .carousel-indicators > li{
+	background: #FFFFFF;
+	border:0;
+	-moz-box-shadow: 0 0 6px #999; 
+	-webkit-box-shadow: 0 0 6px #999; 
+	box-shadow: 0 0 6px #999;
+}
+.carousel-indicators > li,
+.carousel-indicators > li.active{
+	width: 13px;
+	height: 13px;
+	border:0;
+	margin:0 5px 0 0;
+}
+.slideHome .carousel-indicators > li.active{
+	background: #E5E5E5;
+}

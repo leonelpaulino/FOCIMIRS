@@ -1,0 +1,166 @@
+/*311 y redes sociales css*/
+/*banner 311*/
+.est-social311{
+	background: #F0F0F0;
+}
+.s311-social{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.s311{
+	/*width: 50%;*/
+	color: #606060;
+	/*background: #ccc;*/
+	display: block;
+	padding-right: 0;
+}
+.s311 img{
+	float: left;
+}
+.s311 > span.mensaje311{
+	/*width: 42%;*/
+	padding-right: 15px;
+	border-right:solid #C9C9C9 3px;
+}
+.enlace311,
+.mensaje311{
+	float: left;
+}
+.enlace311{
+	width: 27%;
+	padding-right: 15px;		
+}
+.enlace311 img{
+	width: 100%;
+	height: auto;
+}
+.mensaje311{
+	width: 73%;
+	
+}
+.b311_2{
+	/*width: 100%;*/
+	border-right: solid #C9C9C9 1px;
+	padding-right: 7.5px;
+	margin-right: 7.5px;
+	display: block;
+}
+.separador.b311_2{
+
+}
+@media (max-width: 991px) {
+	.enlace311{
+		width: 36%;
+	}
+	.enlace311 img{
+		position: relative;
+		top: 10px;
+	}
+	.mensaje311{
+		width: 64%;
+		position: relative;
+		top: 6px;
+	}
+}
+/*Redes sociales*/
+.social > span{
+	font-size: 16px;
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 3px;
+}
+.socialList{
+	margin:0;
+	padding:0;
+}
+.socialList li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 8.5px;
+	text-indent: -99999px;
+}
+.socialList li:last-child{
+	margin-right: 0;
+}
+.socialList li a{
+	width: 30px;
+	height: 31px;
+	display: block;
+	background-image: url(../images/social.gif);
+}
+.socialList li.fb a{
+	background-position:0 0;
+}
+.socialList li.tt a{
+	background-position:-30px 0;
+}
+.socialList li.gp a{
+	background-position:-60px 0;
+}
+.socialList li.yt a{
+	background-position:-90px 0;
+}
+.socialList li.rss a{
+	background-position:-120px 0;
+}
+.socialList li.inst a{
+	background-position:-150px 0;
+}
+.socialList li.in a{
+	background-position:-180px 0;
+}
+.socialList li.pi a{
+	background-position:-210px 0;
+}
+@media (max-width: 1199px) {
+	.socialList li{
+		margin-right: 4.9px;
+	}
+}
+@media (max-width: 991px) {
+	.socialList li{
+		margin-right: 7.33px;
+	}
+}
+@media (max-width: 767px) {
+	.socialList li{
+		margin-right: 1.5px;
+	}
+	.socialList li a{
+		width: 21px;
+		height: 21px;
+		background-image: url(../images/social_2.gif);
+	}
+	.socialList li.fb a{
+	background-position:0 0;
+	}
+	.socialList li.tt a{
+		background-position:-21px 0;
+	}
+	.socialList li.gp a{
+		background-position:-42px 0;
+	}
+	.socialList li.yt a{
+		background-position:-63px 0;
+	}
+	.socialList li.rss a{
+		background-position:-84px 0;
+	}
+	.socialList li.inst a{
+		background-position:-105px 0;
+	}
+	.socialList li.in a{
+		background-position:-126px 0;
+	}
+	.socialList li.pi a{
+		background-position:-147px 0;
+	}
+	.social{
+		padding-left: 7px;
+		position: relative;
+		top: -4px;
+	}
+	.s311-social{
+		margin-bottom: 10px;
+	}
+}

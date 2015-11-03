@@ -1,0 +1,129 @@
+/*seccion noticias*/
+.noticias-teaser .noticia_separador{
+	padding-top:10px;
+	padding-bottom: 10px;
+}
+hr.noticias-teaser{
+	border-top-color:#C9C9C9;
+	margin: 10px 0;
+}
+.noticias-teaser .imagen img{
+	padding: 2px;
+	background: #fff;
+	border:solid #C9C9C9 1px;
+	display: block;
+}
+.noticias-teaser .imagen{
+	padding-right: 0;
+}
+.noticias-teaser .titulo{
+	font-weight: bold;
+	font-size: 14px;
+
+}
+.noticias-teaser .noticia .leermas{
+
+}
+.est-buscador_noticias input[type="text"],
+.est-buscador_noticias button[type="submit"],
+.est-buscador_noticias select{
+	width: 100%;
+	padding: 5px;
+}
+.est-buscador_noticias input[type="text"]{
+	padding: 5px 10px;
+}
+.est-buscador_noticias select{
+	padding: 5.5px 5px;
+}
+.est-buscador_noticias .col-right-0{
+	padding-right: 0;
+}
+.noticia_full img{
+	height: auto;
+	float: left;
+	padding: 2px;
+	background: #fff;
+	border:solid #C9C9C9 1px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.noticia_full .titulo{
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.imagenList img{
+	width: 250px;
+	height: 160px;
+}
+.contenido form input[type="text"],
+.contenido form select,
+.contenido form button{
+	border-style: solid;
+	border-width: 2px;
+}
+.contenido form button{
+	color: #fff;
+}
+.tabNoticias{
+	margin:0 0 15px 0;
+	padding:0;
+	border-bottom: solid #C9C9C9 2px;
+}
+.tabNoticias > li{
+	list-style: none;
+	display: inline-block;
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	border-bottom-color: #C9C9C9;
+	position: relative;
+	top: 2px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: transparent;
+}
+.tabNoticias > li.active:last-child{
+	border-right: 0;
+}
+.tabNoticias > li > a{
+	padding:10px 15px;
+	display: block;
+}
+.tabNoticias > li > a:hover{
+	text-decoration: none;
+}
+.tabNoticias > li > span{
+	position: absolute;
+	bottom: 0;
+	top: 45px;
+	left:52%;
+	transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	visibility: hidden;
+}
+.tabNoticias > li.active > span{
+	visibility: visible;
+}
+.tabNoticias > li > a > .glyphicon{
+	font-size: 12px;
+	margin-right: 5px;
+}
+.tabNoticias >li > a > .glyphicon:hover{
+color: inherit;
+}
+@media (max-width: 767px) {
+	.noticias-teaser .imagen{
+		padding-right: 15px;
+	}
+	.est-buscador_noticias .col-right-0{
+		padding-right: 15px;
+	}
+	.est-buscador_noticias input[type="text"],
+	.est-buscador_noticias button[type="submit"],
+	.est-buscador_noticias select{
+		margin-bottom: 10px;
+	}
+}

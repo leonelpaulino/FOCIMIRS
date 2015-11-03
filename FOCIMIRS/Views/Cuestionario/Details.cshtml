@@ -1,0 +1,145 @@
+﻿@using FOCIMIRS.Models
+@{
+    Layout = "~/Views/Shared/_LayoutHead.cshtml";
+}
+@helper printPregunta(Preguntas p)
+{
+if (p.PadreId == -1)
+{
+        <span>@p.Pregunta.pregunta</span>
+}
+if (p.Subpreguntas.Count > 0)
+{
+        <ul>
+            @foreach (Preguntas pi in p.Subpreguntas)
+            {
+                <li>
+                    @pi.Pregunta.pregunta
+                    @printPregunta(pi)
+                </li>
+            }
+        </ul>
+}
+}
+@helper printRespuesta(Preguntas p)
+{
+if (p.PadreId == -1)
+{
+    List<amb_respuesta> rlist = p.Pregunta.amb_respuestas.Where(amb_respuesta => amb_respuesta.cuestionario_lleno_id == ViewBag.Cuestionarioid).ToList();
+    if (rlist.Count > 0)
+    {
+        foreach (amb_respuesta repuesta in rlist)
+        {
+            string val = "";
+            if (repuesta.amb_opcione.amb_tipo_opcion.tipo_nombre == "text" || repuesta.amb_opcione.amb_tipo_opcion.tipo_nombre == "numeric")
+            {
+                val = repuesta.amb_opcione.opcion + " " + repuesta.respuesta;
+            }
+            else
+            {
+                val = repuesta.amb_opcione.opcion;
+            }
+            @val <br />
+
+        }
+    }
+    else
+    {
+            <span>N/A</span>
+    }
+}
+
+if (p.Subpreguntas.Count > 0)
+{
+        <ul>
+            @foreach (Preguntas pi in p.Subpreguntas)
+            {
+
+                List<amb_respuesta> listr = pi.Pregunta.amb_respuestas.Where(amb_respuesta => amb_respuesta.cuestionario_lleno_id == ViewBag.Cuestionarioid && amb_respuesta.preguntaP_id == pi.PadreId).ToList();
+                if (listr.Count > 0)
+                {
+                    foreach (amb_respuesta repuesta in listr)
+                    {
+                        <li>
+                            @{
+                                string val = "";
+                                if (repuesta.amb_opcione.amb_tipo_opcion.tipo_nombre == "text" || repuesta.amb_opcione.amb_tipo_opcion.tipo_nombre == "numeric")
+                                {
+                                    val = repuesta.amb_opcione.opcion + " " + repuesta.respuesta;
+                                }
+                                else
+                                {
+                                    val = repuesta.amb_opcione.opcion;
+                                }
+                                    @val <br />
+                             }
+
+            
+                            @printRespuesta(pi)
+                        </li>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <li>
+                                      N/A
+                                    </li>
+                                    }
+                                }
+        </ul>
+}
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+</head>
+<body>
+    <header class="container cabecera">
+        <div class="row">
+            <div class="col-md-12">
+               <img class="img-responsive" src="../Content/images/logoambiente-focimirs.png" alt="Ministerio de Medio Ambiente y Recursos Naturales FOCIMIRS" title="Ministerio de Medio Ambiente y Recursos Naturales FOCIMIRS">
+            </div>
+            <div class="col-md-6">
+                <h2>Municipio: @ViewBag.Cuestionario.amb_municipio.NOM_MUNICIPIO</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>Fecha: @ViewBag.Cuestionario.fecha.Day/@ViewBag.Cuestionario.fecha.Month/@ViewBag.Cuestionario.fecha.Year</h2>
+            </div>
+
+        </div>
+    </header>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th><h2>Pregunta</h2></th>
+                    <th><h2>Respuetas</h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int i = 1; List<Seccion> listas = Seccion.getAll(); }
+
+                @foreach (Seccion seccion in listas)
+                {
+                    <tr><td><h2>@seccion.Seccione.nombre</h2></td><td></td></tr>
+                    foreach (Preguntas p in seccion.Pregunta)
+                    {
+                    <tr>
+                        <td>
+                            @printPregunta(p)
+                        </td>
+                        <td>
+                                @printRespuesta(p)
+                        </td>
+                    </tr>
+                    }
+                    i++;
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+<script type="text/javascript"> window.print()</script>
+</html>

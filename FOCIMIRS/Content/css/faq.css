@@ -1,0 +1,39 @@
+/*Preguntas frecuentes*/
+.content-area,
+.content-area .wpb_toggle{
+	/*margin:0;
+	padding: 0;*/
+}
+.content-area .wpb_toggle{
+	margin-bottom:0;
+	background-color: none;
+	border: 0;
+	border-radius:0;
+	-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);	
+	border-bottom: solid #C9C9C9 1px;
+	padding: 10px 0 10px 20px;
+	font-size: 14px;
+}
+.content-area .wpb_toggle a{
+	display: block;
+}
+.content-area .wpb_toggle a:hover{
+	text-decoration: none;
+}
+.content-area .wpb_toggle .glyphicon{
+	transform : rotate(90deg);
+	-moz-transform : rotate(90deg); /* Firefox */
+	-webkit-transform : rotate(90deg); /* Chrome - Safari */
+	-o-transform : rotate(90deg); /* Opera */
+	transition: transform .3s;
+	-moz-transition: transform 0.3s; /* Firefox 4 */
+	-webkit-transition: transform 0.3s; /* Safari and Chrome */
+	-o-transition: transform 0.3s; /* Opera */
+}
+.content-area .wpb_toggle .collapsed .glyphicon{
+	transform : rotate(0deg);
+	-moz-transform : rotate(0deg); /* Firefox */
+	-webkit-transform : rotate(0deg); /* Chrome - Safari */
+	-o-transform : rotate(0deg); /* Opera */
+}

@@ -1,0 +1,137 @@
+﻿@using FOCIMIRS.Models;
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+        <p>
+            <strong>[TABLA FORMATO DE CÁLCULO </strong><strong>(por ejemplo)]</strong>
+        </p>
+        Pueden utilizar la Tabla I si tiene la capacidad del vehiculo en toneladas.
+        Pueden utilizar la Tabla II si no tiene la capacidad de los vehiculos en toneladas.
+        Para poder llenar las Tablas I y II, deben de llevar un registro en la Tabla III.
+ </div>
+@using (Html.BeginForm("EnviarForm", "Vehiculos", FormMethod.Post))
+{
+<div class="row">
+    <div class="col-md-3">
+        <p>Municipio/DM</p>
+    </div>
+    <div class="col-md-3">
+    @{
+       <select class="form-control" onchange="selectdm()" id="InMunicipio" name="ComboBox">
+        @foreach (amb_municipio i in ViewBag.Municipios)
+        {
+            if (i.NOM_MUNICIPIO == ViewBag.Mun) { 
+                <option value="@i.NOM_MUNICIPIO" selected> @i.NOM_MUNICIPIO</option>
+            
+           }
+            else { 
+                <option value="@i.NOM_MUNICIPIO" > @i.NOM_MUNICIPIO</option>
+        }
+        }
+    </select>
+}
+    </div>
+</div><br>
+
+<div class="row">
+    <div class="col-md-3">
+        <p>Nombre del vertedero/relleno sanitario</p>
+    </div>
+    <div class="col-md-4">
+        
+        <input name="vertedero" type="text" class="form-control" value="@ViewBag.vertedero" required title="Debe llenar este campo" />
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-md-2">
+       
+        <p>Nombre de persona responsable </p>
+    </div>
+    <div class="col-md-4 col-md-offset-1">
+        
+        <input type="text" name="responsable" class="form-control" value="@ViewBag.responsable" required title="Debe llenar este campo" />
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-md-2">
+        <p>Periodo (Mes/Año)</p>
+    </div>
+    <div class="col-md-1">
+        <p> Desde</p>
+    </div>
+    <div class="col-md-3">
+        <input name="fecha1" type="date" class="form-control" required title="Debe llenar este campo"></input>
+    </div>
+    <div class="col-md-1">
+        <p>Hasta </p>
+    </div>
+    <div class="col-md-3">
+        <input name="fecha2" type="date" class="form-control" required title="Debe llenar este campo"></input>
+    </div>
+</div><br>
+<div class="row">
+    <div class="col-md-3">
+        <p>Capacidad de los vehiculos</p>
+    </div>
+    <div class="col-md-4">
+        <select id ="tabla"class="form-control" onchange="cambiarTabla()">
+            <option value="tons">Toneladas</option>
+            <option value="m3">Metros cubicos</option>
+        </select>
+    </div>
+</div><br>
+    <div class="container-fluid">
+        <div class="row" id="header">
+            <div class="col-md-2">Tipo  de Residuos *Recolección *Directa</div>
+            <div class="col-md-2">Tipo de Vehículo</div>
+            <div class="col-md-3">Chasis</div>
+            <div class="col-md-1">Ficha</div>
+            <div class="col-md-1" id="capacidad">Capacidad (Ton) *1</div>
+            <div class="col-md-1" id="numviaje">Numero de Viaje/mes *2</div>
+            <div class="col-md-1" id="cantidadR">Cantidad de residuos (ton/mes) (=*1 x *2)</div>
+        </div>
+    </div>
+    <hr />
+<div id="table">
+    <div class="row" id="1">
+        <div class="col-md-2">
+        <select name="1-1" class="form-control" style="width:120px">
+        <option value="Recoleccion">Recoleccion</option>
+        <option value="Directa">Directa</option>
+    </select>
+        </div>
+        <div class="col-md-2">
+            <select id ="tipovehiculo" name="1-2" class="form-control" style="width:130px">
+                @foreach (amb_tipo_vehiculo tv in new FOCIMIRSDataContext().amb_tipo_vehiculos.AsEnumerable())
+                {
+                    <option value= @tv.id>@tv.nombre</option>
+                }
+            </select>
+
+        </div>
+        <div class="col-md-3"><input name="1-3" type="text" class="form-control" required title="Debe llenar este campo" /></div>
+        <div class="col-md-1"><input name="1-8" type="text" class="form-control" style="width:60px" required title="Debe llenar este campo" /></div>
+        <div class="col-md-1" id="1-4" ><input name="1-4" type="number" class="form-control" style="width:60px" value="0" onchange="sumCantR(this)" required title="Debe llenar este campo" /></div>
+        <div class="col-md-1"><input name="1-5" type="number" class="form-control" style="width:60px" value="0" onchange="sumCantR(this)" required title="Debe llenar este campo" /></div>
+        <div class="col-md-1" id="1-6">0</div>
+    </div>
+    <br />
+</div>
+<div class="row" id="addrow">
+    <div class="col-md-2">
+        <input  type="button" class="btn btn-primary" onclick="addnewRow()" value="Agregar Vehiculo" />
+    </div>
+
+</div><br />
+<hr />
+<div class="row" id="addrow">
+    <div class="col-md-2">
+        <input id="submit" type="submit" name="submitbutton" value="Enviar"
+               class="btn btn-green" style="color:white;background-color:#77B32F;border-color:#689C29;" />
+    </div>
+
+</div><br />
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Js/Vehiculos.js")"></script>

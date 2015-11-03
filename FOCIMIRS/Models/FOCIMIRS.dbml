@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FOCIMIRSDesarrollo" Class="FOCIMIRSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=sql01;Initial Catalog=FOCIMIRSDesarrollo;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FOCIMIRSDesarrolloConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.amb_cuestionario" Member="amb_cuestionarios">
+    <Type Name="amb_cuestionario">
+      <Column Name="cuestionario_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cuestionario_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="amb_cuestionario_amb_cuestionario_usuario" Member="amb_cuestionario_usuarios" ThisKey="cuestionario_id" OtherKey="cuestionario_id" Type="amb_cuestionario_usuario" />
+      <Association Name="amb_cuestionario_amb_pregunta" Member="amb_preguntas" ThisKey="cuestionario_id" OtherKey="cuestionarioid" Type="amb_pregunta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_viajes_mensuales" Member="amb_viajes_mensuales">
+    <Type Name="amb_viajes_mensuale">
+      <Column Name="viajesid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecha1" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="viajes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fichaid" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="chasisid" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="fecha2" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="amb_vehiculo_amb_viajes_mensuale" Member="amb_vehiculo" ThisKey="fichaid,chasisid" OtherKey="ficha,chasis" Type="amb_vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_cuestionario_lleno" Member="amb_cuestionario_llenos">
+    <Type Name="amb_cuestionario_lleno">
+      <Column Name="cuestionario_llenoid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Etapa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cuestionario_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COD_PERIODO" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="COD_PROVINCIA" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="COD_REGION" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="COD_MUNICIPIO" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="temp_cuestionario" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="amb_cuestionario_lleno_amb_municipios_Cuestionario" Member="amb_municipios_Cuestionarios" ThisKey="cuestionario_llenoid" OtherKey="Cuestionario_id" Type="amb_municipios_Cuestionario" />
+      <Association Name="amb_cuestionario_lleno_amb_respuesta" Member="amb_respuestas" ThisKey="cuestionario_llenoid" OtherKey="cuestionario_lleno_id" Type="amb_respuesta" />
+      <Association Name="amb_cuestionario_lleno_amb_respuestas_temp" Member="amb_respuestas_temps" ThisKey="cuestionario_llenoid" OtherKey="cuestionario_lleno_id" Type="amb_respuestas_temp" />
+      <Association Name="amb_cuestionario_usuario_amb_cuestionario_lleno" Member="amb_cuestionario_usuario" ThisKey="Cuestionario_id" OtherKey="cuestionario_usuarioid" Type="amb_cuestionario_usuario" IsForeignKey="true" />
+      <Association Name="amb_municipio_amb_cuestionario_lleno" Member="amb_municipio" ThisKey="COD_PERIODO,COD_REGION,COD_PROVINCIA,COD_MUNICIPIO" OtherKey="COD_PERIODO,COD_REGION,COD_PROVINCIA,COD_MUNICIPIO" Type="amb_municipio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_cuestionario_usuario" Member="amb_cuestionario_usuarios">
+    <Type Name="amb_cuestionario_usuario">
+      <Column Name="cuestionario_usuarioid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cuestionario_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="usuario_id" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="amb_cuestionario_usuario_amb_cuestionario_lleno" Member="amb_cuestionario_llenos" ThisKey="cuestionario_usuarioid" OtherKey="Cuestionario_id" Type="amb_cuestionario_lleno" />
+      <Association Name="amb_cuestionario_amb_cuestionario_usuario" Member="amb_cuestionario" ThisKey="cuestionario_id" OtherKey="cuestionario_id" Type="amb_cuestionario" IsForeignKey="true" />
+      <Association Name="amb_usuario_amb_cuestionario_usuario" Member="amb_usuario" ThisKey="usuario_id" OtherKey="usuario_id" Type="amb_usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_municipios" Member="amb_municipios">
+    <Type Name="amb_municipio">
+      <Column Name="COD_PERIODO" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COD_REGION" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COD_PROVINCIA" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COD_MUNICIPIO" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOM_MUNICIPIO" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="vertedero" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="responsable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="amb_municipio_amb_cuestionario_lleno" Member="amb_cuestionario_llenos" ThisKey="COD_PERIODO,COD_REGION,COD_PROVINCIA,COD_MUNICIPIO" OtherKey="COD_PERIODO,COD_REGION,COD_PROVINCIA,COD_MUNICIPIO" Type="amb_cuestionario_lleno" />
+      <Association Name="amb_municipio_amb_municipios_Cuestionario" Member="amb_municipios_Cuestionarios" ThisKey="COD_PERIODO,COD_REGION,COD_PROVINCIA,COD_MUNICIPIO" OtherKey="COD_PERIODO,COD_REGION,COD_PROVINCIA,COD_MUNICIPIO" Type="amb_municipios_Cuestionario" />
+      <Association Name="amb_provincia_amb_municipio" Member="amb_provincia" ThisKey="COD_PROVINCIA,COD_REGION,COD_PERIODO" OtherKey="COD_PROVINCIA,COD_REGION,COD_PERIODO" Type="amb_provincia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_municipios_Cuestionario" Member="amb_municipios_Cuestionarios">
+    <Type Name="amb_municipios_Cuestionario">
+      <Column Name="COD_PERIODO" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COD_REGION" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COD_PROVINCIA" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COD_MUNICIPIO" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cuestionario_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="amb_cuestionario_lleno_amb_municipios_Cuestionario" Member="amb_cuestionario_lleno" ThisKey="Cuestionario_id" OtherKey="cuestionario_llenoid" Type="amb_cuestionario_lleno" IsForeignKey="true" />
+      <Association Name="amb_municipio_amb_municipios_Cuestionario" Member="amb_municipio" ThisKey="COD_PERIODO,COD_REGION,COD_PROVINCIA,COD_MUNICIPIO" OtherKey="COD_PERIODO,COD_REGION,COD_PROVINCIA,COD_MUNICIPIO" Type="amb_municipio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_opciones" Member="amb_opciones">
+    <Type Name="amb_opcione">
+      <Column Name="opcion_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="opcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="tipo_opcionid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="amb_opcione_amb_opciones_pregunta" Member="amb_opciones_preguntas" ThisKey="opcion_id" OtherKey="opcionid" Type="amb_opciones_pregunta" />
+      <Association Name="amb_opcione_amb_respuesta" Member="amb_respuestas" ThisKey="opcion_id" OtherKey="opcion_id" Type="amb_respuesta" />
+      <Association Name="amb_opcione_amb_respuestas_temp" Member="amb_respuestas_temps" ThisKey="opcion_id" OtherKey="opcion_id" Type="amb_respuestas_temp" />
+      <Association Name="amb_tipo_opcion_amb_opcione" Member="amb_tipo_opcion" ThisKey="tipo_opcionid" OtherKey="tipoid" Type="amb_tipo_opcion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_opciones_preguntas" Member="amb_opciones_preguntas">
+    <Type Name="amb_opciones_pregunta">
+      <Column Name="preguntaid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="opcionid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="amb_opcione_amb_opciones_pregunta" Member="amb_opcione" ThisKey="opcionid" OtherKey="opcion_id" Type="amb_opcione" IsForeignKey="true" />
+      <Association Name="amb_pregunta_amb_opciones_pregunta" Member="amb_pregunta" ThisKey="preguntaid" OtherKey="pregunta_id" Type="amb_pregunta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_permisos" Member="amb_permisos">
+    <Type Name="amb_permiso">
+      <Column Name="permisosid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="permiso_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="amb_permiso_amb_permisos_role" Member="amb_permisos_roles" ThisKey="permisosid" OtherKey="permisos_id" Type="amb_permisos_role" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_permisos_roles" Member="amb_permisos_roles">
+    <Type Name="amb_permisos_role">
+      <Column Name="permisos_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="rol_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="amb_permiso_amb_permisos_role" Member="amb_permiso" ThisKey="permisos_id" OtherKey="permisosid" Type="amb_permiso" IsForeignKey="true" />
+      <Association Name="amb_role_amb_permisos_role" Member="amb_role" ThisKey="rol_id" OtherKey="rolid" Type="amb_role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_pregunta_seccion" Member="amb_pregunta_seccions">
+    <Type Name="amb_pregunta_seccion">
+      <Column Name="seccionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="amb_pregunta_seccion_amb_pregunta" Member="amb_preguntas" ThisKey="seccionID" OtherKey="seccion_id" Type="amb_pregunta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_preguntas" Member="amb_preguntas">
+    <Type Name="amb_pregunta">
+      <Column Name="pregunta_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="pregunta" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="cuestionarioid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="seccion_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="amb_pregunta_amb_opciones_pregunta" Member="amb_opciones_preguntas" ThisKey="pregunta_id" OtherKey="preguntaid" Type="amb_opciones_pregunta" />
+      <Association Name="amb_pregunta_amb_respuesta" Member="amb_respuestas" ThisKey="pregunta_id" OtherKey="pregunta_id" Type="amb_respuesta" />
+      <Association Name="amb_pregunta_amb_respuesta1" Member="amb_respuestas1" ThisKey="pregunta_id" OtherKey="preguntaP_id" Type="amb_respuesta" />
+      <Association Name="amb_pregunta_amb_respuestas_temp" Member="amb_respuestas_temps" ThisKey="pregunta_id" OtherKey="pregunta_id" Type="amb_respuestas_temp" />
+      <Association Name="amb_pregunta_amb_respuestas_temp1" Member="amb_respuestas_temps1" ThisKey="pregunta_id" OtherKey="preguntaP_id" Type="amb_respuestas_temp" />
+      <Association Name="amb_pregunta_amb_subPregunta" Member="amb_subPreguntas" ThisKey="pregunta_id" OtherKey="pregunta_id" Type="amb_subPregunta" />
+      <Association Name="amb_pregunta_amb_subPregunta1" Member="amb_subPreguntas1" ThisKey="pregunta_id" OtherKey="subpreguntasid" Type="amb_subPregunta" />
+      <Association Name="amb_cuestionario_amb_pregunta" Member="amb_cuestionario" ThisKey="cuestionarioid" OtherKey="cuestionario_id" Type="amb_cuestionario" IsForeignKey="true" />
+      <Association Name="amb_pregunta_seccion_amb_pregunta" Member="amb_pregunta_seccion" ThisKey="seccion_id" OtherKey="seccionID" Type="amb_pregunta_seccion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_provincias" Member="amb_provincias">
+    <Type Name="amb_provincia">
+      <Column Name="COD_PERIODO" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COD_REGION" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COD_PROVINCIA" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOM_PROVINCIA" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="poblacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Alcalde" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="encargado_ugam" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="director_provincial_de_MA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="enc_de_ornato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AlcaldeTel" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="AlcaldeMail" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="UgamTel" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="UgamMail" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Director_PTel" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Director_PMail" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="OrnatoTel" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="OrnatoMail" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Association Name="amb_provincia_amb_municipio" Member="amb_municipios" ThisKey="COD_PROVINCIA,COD_REGION,COD_PERIODO" OtherKey="COD_PROVINCIA,COD_REGION,COD_PERIODO" Type="amb_municipio" />
+      <Association Name="amb_provincia_amb_usuario" Member="amb_usuarios" ThisKey="COD_PROVINCIA,COD_REGION,COD_PERIODO" OtherKey="COD_PROVINCIA,COD_REGION,COD_PERIODO" Type="amb_usuario" />
+      <Association Name="amb_regione_amb_provincia" Member="amb_regione" ThisKey="COD_PERIODO,COD_REGION" OtherKey="COD_PERIODO,COD_REGION" Type="amb_regione" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_regiones" Member="amb_regiones">
+    <Type Name="amb_regione">
+      <Column Name="COD_PERIODO" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COD_REGION" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOM_REGION" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Association Name="amb_regione_amb_provincia" Member="amb_provincias" ThisKey="COD_PERIODO,COD_REGION" OtherKey="COD_PERIODO,COD_REGION" Type="amb_provincia" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_respuesta" Member="amb_respuestas">
+    <Type Name="amb_respuesta">
+      <Column Name="respuestaid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="opcion_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pregunta_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cuestionario_lleno_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="respuesta" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="preguntaP_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="amb_cuestionario_lleno_amb_respuesta" Member="amb_cuestionario_lleno" ThisKey="cuestionario_lleno_id" OtherKey="cuestionario_llenoid" Type="amb_cuestionario_lleno" IsForeignKey="true" />
+      <Association Name="amb_opcione_amb_respuesta" Member="amb_opcione" ThisKey="opcion_id" OtherKey="opcion_id" Type="amb_opcione" IsForeignKey="true" />
+      <Association Name="amb_pregunta_amb_respuesta" Member="amb_pregunta" ThisKey="pregunta_id" OtherKey="pregunta_id" Type="amb_pregunta" IsForeignKey="true" />
+      <Association Name="amb_pregunta_amb_respuesta1" Member="amb_pregunta1" ThisKey="preguntaP_id" OtherKey="pregunta_id" Type="amb_pregunta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_respuestas_temp" Member="amb_respuestas_temps">
+    <Type Name="amb_respuestas_temp">
+      <Column Name="respuestaid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="opcion_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pregunta_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cuestionario_lleno_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="respuesta" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="preguntaP_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="amb_cuestionario_lleno_amb_respuestas_temp" Member="amb_cuestionario_lleno" ThisKey="cuestionario_lleno_id" OtherKey="cuestionario_llenoid" Type="amb_cuestionario_lleno" IsForeignKey="true" />
+      <Association Name="amb_opcione_amb_respuestas_temp" Member="amb_opcione" ThisKey="opcion_id" OtherKey="opcion_id" Type="amb_opcione" IsForeignKey="true" />
+      <Association Name="amb_pregunta_amb_respuestas_temp" Member="amb_pregunta" ThisKey="pregunta_id" OtherKey="pregunta_id" Type="amb_pregunta" IsForeignKey="true" />
+      <Association Name="amb_pregunta_amb_respuestas_temp1" Member="amb_pregunta1" ThisKey="preguntaP_id" OtherKey="pregunta_id" Type="amb_pregunta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_roles" Member="amb_roles">
+    <Type Name="amb_role">
+      <Column Name="rolid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rol_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="amb_role_amb_permisos_role" Member="amb_permisos_roles" ThisKey="rolid" OtherKey="rol_id" Type="amb_permisos_role" />
+      <Association Name="amb_role_amb_usuario" Member="amb_usuarios" ThisKey="rolid" OtherKey="rol_id" Type="amb_usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_subPreguntas" Member="amb_subPreguntas">
+    <Type Name="amb_subPregunta">
+      <Column Name="subpreguntasid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pregunta_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="amb_pregunta_amb_subPregunta" Member="amb_pregunta" ThisKey="pregunta_id" OtherKey="pregunta_id" Type="amb_pregunta" IsForeignKey="true" />
+      <Association Name="amb_pregunta_amb_subPregunta1" Member="amb_pregunta1" ThisKey="subpreguntasid" OtherKey="pregunta_id" Type="amb_pregunta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_tipo_opcion" Member="amb_tipo_opcions">
+    <Type Name="amb_tipo_opcion">
+      <Column Name="tipoid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tipo_nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="amb_tipo_opcion_amb_opcione" Member="amb_opciones" ThisKey="tipoid" OtherKey="tipo_opcionid" Type="amb_opcione" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_tipo_vehiculos" Member="amb_tipo_vehiculos">
+    <Type Name="amb_tipo_vehiculo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="amb_tipo_vehiculo_amb_vehiculo" Member="amb_vehiculos" ThisKey="id" OtherKey="tipo_vehiculo" Type="amb_vehiculo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_usuarios" Member="amb_usuarios">
+    <Type Name="amb_usuario">
+      <Column Name="usuario_id" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pass" Type="System.Data.Linq.Binary" DbType="VarBinary(128) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="rol_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COD_PERIODO" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="COD_REGION" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="COD_PROVINCIA" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Association Name="amb_usuario_amb_cuestionario_usuario" Member="amb_cuestionario_usuarios" ThisKey="usuario_id" OtherKey="usuario_id" Type="amb_cuestionario_usuario" />
+      <Association Name="amb_role_amb_usuario" Member="amb_role" ThisKey="rol_id" OtherKey="rolid" Type="amb_role" IsForeignKey="true" />
+      <Association Name="amb_provincia_amb_usuario" Member="amb_provincia" ThisKey="COD_PROVINCIA,COD_REGION,COD_PERIODO" OtherKey="COD_PROVINCIA,COD_REGION,COD_PERIODO" Type="amb_provincia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.amb_vehiculos" Member="amb_vehiculos">
+    <Type Name="amb_vehiculo">
+      <Column Name="ficha" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="chasis" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="color" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="densidad" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="COD_PERIODO" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="COD_REGION" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="COD_PROVINCIA" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Capacidad" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="COD_MUNICIPIO" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo_vehiculo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipo_residuos" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Association Name="amb_vehiculo_amb_viajes_mensuale" Member="amb_viajes_mensuales" ThisKey="ficha,chasis" OtherKey="fichaid,chasisid" Type="amb_viajes_mensuale" />
+      <Association Name="amb_tipo_vehiculo_amb_vehiculo" Member="amb_tipo_vehiculo" ThisKey="tipo_vehiculo" OtherKey="id" Type="amb_tipo_vehiculo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

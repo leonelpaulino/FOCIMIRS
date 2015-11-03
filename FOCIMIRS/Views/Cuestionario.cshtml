@@ -1,0 +1,1285 @@
+﻿@{
+    Layout = null;
+}
+<div>
+    <span> Usuario: @Session["Usuarioid"]</span><br />
+     @Html.ActionLink("Cerrar Sesion", "Logoff")
+</div>
+<center><h2>Cuestionario creación Base de Datos</h2></center>
+@using (Html.BeginForm("Home","Home",FormMethod.Post)){ 
+
+<table width="900" border="0" cellspacing="5" cellpadding="0">
+    <tr>
+        <td colspan="3" align="center" bgcolor="#5F497A"><span style="color:#FFF"><strong>&nbsp;Información General del Municipio/DM</strong></span></td>
+    </tr>
+        <tr>
+            <td>Provincia <input type="text"></input></td>
+            <td>Municipio/DM <input type="text"></input></td>
+            <td>Fecha <input type="date"></input></td>
+        </tr>
+        <tr>
+            <td>Alcalde <input type="text"></input></td>
+            <td>Teléfono <input type="number"></input></td>
+            <td>Email <input type="email" name="email"></input></td>
+        </tr>
+        <tr>
+            <td>Encargado de UGAM <input type="text"></input></td>
+            <td>Teléfono <input type="number"></input></td>
+            <td>Email <input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>Enc. de Ornato y limpieza <input type="text"></input></td>
+            <td>Teléfono <input type="number"></input></td>
+            <td>Email <input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td>Director Provincia de M.A. <input type="text"></input></td>
+            <td>Teléfono <input type="number"></input></td>
+            <td>Email <input type="email" name="email"></td>
+    
+    </tr>
+</table>
+<p>Favor indicar <u><b>S</b></u> si la respuesta es "SI", <u><b>N</b></u> si la respuesta es "NO", y <u><b>circular la respuesta</b></u> en el caso de que las opciones estén enumeradas. Si la pregunta <u>No Aplica</u> para su Municipio/DM, favor indicar <b>N/A</b> en las opción de <b>Otros</b></p>
+
+<b>Información Requerida en base a los indicadores</b>
+
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="900" align="center" bgcolor="#5F497A"><strong><span style="color:#FFF">I- Recolección de Residuos</span></strong></td>
+        </tr>
+    </tbody>
+</table>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="390" align="center"><strong>Pregunta</strong></td>
+            <td width="309" align="center"><strong>Respuesta</strong></td>
+        </tr>
+        <tr>
+            <td width="390">1.       ¿Cuál es el número total de habitantes y hogares del municipio/DM?</td>
+            <td width="309">
+                <input type="number"></input> Hab.
+                <br />
+                <input type="number"></input> Hogares.
+            </td>
+        </tr>
+        <tr>
+            <td width="390">2.     ¿Cuál es número total de habitantes y hogares que usan el servicio de recolección de RSM en el municipio/DM?</td>
+            <td width="309">
+                <input type="number"></input> Hab.
+                <br />
+                <input type="number"></input> Hogares.
+            </td>
+        </tr>
+        <tr>
+            <td width="390">3.       ¿Cuál es el índice total de cobertura de la recolección de RSM en el Municipio/DM?</td>
+            <td width="309"><input type="number"></input> %</td>
+        </tr>
+        <tr>
+            <td width="390">
+                <p>
+                    4.       ¿Recolecta residuos <u>peligrosos/biomédicos</u> de <strong><span style="color:#F00">centros médicos y/o centro de salud</span></strong>?
+                </p>
+                <ul>
+                    <li>Si la respuesta es "SI", ¿cómo se recolecta?</li>
+                </ul>
+            </td>
+            <td width="309">
+                <p>
+                    S/N <input type="checkbox"></input>
+                </p>
+                <p>
+                    <input type="checkbox" name="residuos-peligrosos"></input> 1) Junto con residuos domésticos y comerciales
+                    <br /><input type="checkbox" name="residuos-peligrosos"></input> 2) Cuando se solicita
+                    <br /><input type="checkbox" name="residuos-peligrosos"></input> 3) Regularmente se recolecta de forma separada
+                    <br /><input type="checkbox" name="residuos-peligrosos"></input>
+                    4) Otros:
+                    Favor especifique: <strong><input type="text"></input></strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="390">
+                <p>
+                    5.       ¿El municipio recolecta o recibe <strong><span style="color:#F00">residuos de comercios</span></strong>?
+
+                </p>
+                <ul>
+                    <li> Si la respuesta es "SI", ¿cómo se recolecta?</li>
+                </ul>
+            </td>
+            <td width="309">
+                <p>
+                    S/N <input type="checkbox"></input>
+                    <br />
+                    <br /><input type="checkbox" name="residuos-comercios"></input> 1) Junto con residuos domésticos
+                    <br /><input type="checkbox" name="residuos-comercios"></input> 2) Cuando se solicita
+                    <br /><input type="checkbox" name="residuos-comercios"></input> 3) Regularmente se recolecta de forma separada
+                    <br /><input type="checkbox" name="residuos-comercios"></input> 4) Otros: Favor especifique: <strong><input type="text"></input></strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="390">
+                <p>
+                    6.       ¿Recolecta o recibe el municipio <strong><span style="color:#F00">residuos industriales</span></strong>?
+
+                </p>
+                <ul>
+                    <li> Si la respuesta es "SI", ¿como se recolecta?</li>
+                </ul>
+            </td>
+            <td width="309">
+                <p>
+                    S/N <input type="checkbox"></input>
+                    <br />
+                    <br /><input type="checkbox" name="residuos-industriales"></input> 1) Junto con residuos domésticos y comerciales
+                    <br /><input type="checkbox" name="residuos-industriales"></input> 2) Cuando se solicita
+                    <br /><input type="checkbox" name="residuos-industriales"></input> 3) Regularmente se recolecta de forma separada
+                    <br /><input type="checkbox" name="residuos-industriales"></input> 4) Otros: Favor especifique: <strong><input type="text"></input></strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="390">
+                <p>
+                    7.       ¿Recolecta residuos de <strong><span style="color:#F00">centros educativos (públicos/privados)</span></strong>?
+
+                </p>
+                <ul>
+                    <li> Si la respuesta es "SI", ¿cómo se recolecta?</li>
+                </ul>
+            </td>
+            <td width="309">
+                <p>
+                    S/N <input type="checkbox"></input>
+                    <br />
+                    <br /><input type="checkbox" name="residuos-centroseducativos"></input> 1) Junto con residuos domésticos y comerciales
+                    <br /><input type="checkbox" name="residuos-centroseducativos"></input> 2) Cuando se solicita
+                    <br /><input type="checkbox" name="residuos-centroseducativos"></input> 3) Regularmente se recolecta de forma separada
+                    <br /><input type="checkbox" name="residuos-centroseducativos"></input> 4) Otros: Favor especifique: <strong><input type="text"></input></strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="390">
+                <p>
+                    8.       ¿Recolecta residuos de <strong><span style="color:#F00">instituciones</span></strong>?
+
+                </p>
+                <ul>
+                    <li> Si la respuesta es "SI", ¿cómo se recolecta?</li>
+                </ul>
+            </td>
+            <td width="309">
+                <p>
+                    S/N <input type="checkbox"></input>
+                    <br />
+                    <br /><input type="checkbox" name="residuos-instituciones"></input> 1) Junto con residuos domésticos y comerciales
+                    <br /><input type="checkbox" name="residuos-instituciones"></input> 2) Cuando se solicita
+                    <br /><input type="checkbox" name="residuos-instituciones"></input> 3) Regularmente se recolecta de forma separada
+                    <br /><input type="checkbox" name="residuos-instituciones"></input> 4) Otros: Favor especifique: <strong><input type="text"></input></strong>
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p> &nbsp; </p>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="900" align="center" bgcolor="#5F497A"><strong><span style="color:#FFF">II. Reciclaje y Tratamiento intermedio</span></strong></td>
+        </tr>
+    </tbody>
+</table>
+<table width="900">
+    <tbody>
+        <tr>
+            <td colspan="2" width="699"><strong>Pregunta</strong></td>
+            <td width="312"><strong>Respuesta</strong></td>
+        </tr>
+        <tr>
+            <td colspan="2" width="699">1.       ¿Existe alguna actividad formal de reciclaje/recuperación en el municipio?</td>
+            <td width="312">S/N  <input type="checkbox"></input></td>
+        </tr>
+        <tr>
+            <td colspan="2" width="699">2.       Si la respuesta es "Si", Esta actividad es</td>
+            <td width="312">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" width="699">
+                <ul>
+                    <li>Segregación en la fuente (como actividad formal)</li>
+                </ul>
+            </td>
+            <td width="312">
+                <p>
+                    S/N <input type="checkbox"></input>
+                    <br />
+                    <br />
+                    <input type="checkbox" name="actividad-formal"></input> 1) Toda la ciudad (municipio)
+                    <br /><input type="checkbox" name="actividad-formal"></input> 2) Parte de la ciudad (ej. comunidad o Zona)
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" width="699">
+                <ul>
+                    <li>Tratamiento intermedio  (como actividad formal)</li>
+                </ul>
+            </td>
+            <td width="312">S/N <input type="checkbox"></input></td>
+        </tr>
+        <tr>
+            <td colspan="3" width="699">3.       Si la respuesta es "SI", ¿Qué tipo de materiales son segregados en la fuente y reciclados por tratamiento intermedio?</td>
+        </tr>
+        <tr>
+            <td width="699" align="center">
+                <p>
+                    <strong>Segregación en la fuente</strong><strong> por el municipio</strong>
+                    <br /><strong>(como actividad formal</strong><strong>)</strong>
+                </p>
+            </td>
+            <td width="352" colspan="2" align="center">
+                <p>
+                    <strong>Tratamiento intermedio por el municipio</strong>
+                    <br />
+                    <strong>(como actividad formal)</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+             <u>Orgánicsos</u> <br />
+                <div>
+                    S/N  <input type="checkbox" width="30px" /> <br/>
+                    kg/mes<br/>
+                    <input type="number" width="30px" />
+                </div>       
+                    <br/>
+              <u>Plásticos</u>
+                <div>
+                    S/N  <input type="checkbox" width="30px" /><br/>
+                    kg/mes <br />
+                    <input type="number" width="30px">
+                </div>         
+                    <br/>
+                <u>Papel & cartón</u><br/>
+                <div>
+                    S/N <input type="checkbox" width="30px" /><br />
+                    kg/mes <br />
+                    <input type="number" width="30px">
+                </div> <br />
+                <u>Metal</u><br />
+                <div>
+                    S/N <input type="checkbox" width="30px" /><br />
+                    kg/mes <br />
+                    <input type="number" width="30px">
+                </div> <br />
+                <u>Vidrio</u><br />
+                <div>
+                    S/N <input type="checkbox" width="30px" /><br />
+                    kg/mes <br />
+                    <input type="number" width="30px"><br />
+                    <u>Otros</u> <br />
+                    (<input type="text"/>)
+                </div>    
+                    
+               
+            </td>
+            <td colspan="2" width="352">
+                    <u>Compostaje</u> 
+                <div>
+                    S/N <input type="checkbox" width="30px"></input> , <input type="number" width="30px"></input> kg/mes
+                    <br />Dónde:  En el SDF S/N <input type="checkbox" width="30px"></input>
+
+                    <br />Otro lugar (<input type="text"></input>)<br />  S/N <input type="checkbox" width="30px"></input>
+                    <br /><br />
+                </div>
+                    <u>Plásticos</u> 
+                <div>              
+                     S/N <input type="checkbox" width="30px"></input> , <input type="number" width="30px"></input> kg/mes
+                    <br />Dónde:  En el SDF S/N <input type="checkbox" width="30px"></input>
+                    <br />Otro lugar (<input type="text"></input>) <br />S/N <input type="checkbox" width="30px"></input>
+                </div> 
+                    <br /><br /><u>Papel & cartón</u>
+                <div>
+                    S/N <input type="checkbox" width="30px"></input> , <input type="number" width="30px"></input> kg/mes
+                    <br />Dónde:  En el SDF S/N <input type="checkbox" width="30px"></input>
+                    <br />Otro lugar (<input type="text"></input>)<br /> S/N <input type="checkbox" width="30px"></input>
+                </div>
+                    <br /><br /><u>Metal </u>     
+                <div>
+                    S/N <input type="checkbox" width="30px"></input> , <input type="number" width="30px"></input> kg/mes
+                    <br />Dónde:  En el SDF S/N <input type="checkbox" width="30px"></input>
+                    <br />Otro lugar (<input type="text"></input>)<br /> S/N <input type="checkbox" width="30px"></input>
+                </div>
+                <br /><br /><u>Vidrio</u>  
+                <div>
+                    S/N <input type="checkbox" width="30px"></input> , <input type="number" width="30px"></input> kg/mes
+                    <br />Dónde:  En el SDF S/N <input type="checkbox" width="30px"></input>
+                    <br />Otro lugar (<input type="text"></input>)<br /> S/N <input type="checkbox" width="30px"></input>
+                </div>
+                <div>
+                    <br /><br /><u>Otros</u>(                     ) <br />S/N <input type="checkbox" width="30px"></input> , <input type="number" width="30px"></input> kg/mes
+                    <br />Dónde:  En el SDF S/N <input type="checkbox" width="30px"></input>
+                    <br />Otro lugar (<input type="text"></input>) <br />S/N <input type="checkbox" width="30px"></input>
+                </div>
+              
+</td>
+        </tr>
+        <tr>
+            <td width="699"></td>
+            <td width="352"></td>
+            <td width="312"></td>
+        </tr>
+    </tbody>
+</table>
+<p> &nbsp;</p>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="900" align="center" bgcolor="#5F497A"><strong><span style="color:#FFF">III- Disposición final</span></strong></td>
+        </tr>
+    </tbody>
+</table>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="387"><strong>Pregunta</strong></td>
+            <td width="312"><strong>Respuesta</strong></td>
+        </tr>
+        <tr>
+            <td width="387">1.       ¿Cuantos vertederos en uso existen en el Municipio/DM?</td>
+            <td width="312">Cantidad <input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="387">2.       ¿Nombre y ubicación del vertedero/ relleno sanitario?</td>
+            <td width="312"><input type="text"></input></td>
+        </tr>
+        <tr>
+            <td width="387">3.       ¿Actualmente se realiza cobertura de los residuos en el Vertedero/ Relleno sanitario?</td>
+            <td width="312">S/N <input type="checkbox"></input></td>
+        </tr>
+        <tr>
+            <td width="387">
+                <ul>
+                    <li>Si la respuesta es "Si", ¿cada cuanto tiempo se realiza la cobertura?</li>
+                </ul>
+            </td>
+            <td width="312">
+                <p>
+                    <input type="checkbox" name="tiempo-cobertura"></input> 1) Diario
+                    <br /><input type="checkbox" name="tiempo-cobertura"></input> 2) Interdiario
+                    <br /><input type="checkbox" name="tiempo-cobertura"></input> 3) Semanal
+                    <br /><input type="checkbox" name="tiempo-cobertura"></input> 4) Quincenal
+                    <br /><input type="checkbox" name="tiempo-cobertura"></input> 5) Mensual
+                    <br /><input type="checkbox" name="tiempo-cobertura"></input> 6) Otro <input type="text"></input>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="387">4.       ¿Existe en el vertedero una  red de recolección de lixiviados?</td>
+            <td width="312">S/N <input type="checkbox" width="30px"></input></td>
+        </tr>
+        <tr>
+            <td width="387">5.       ¿Existe en vertedero una laguna de captación de lixiviado?</td>
+            <td width="312">S/N <input type="checkbox" width="30px"></input></td>
+        </tr>
+        <tr>
+            <td width="387">6.       ¿Existe en el vertedero una red de captación de gases?</td>
+            <td width="312">S/N <input type="checkbox" width="30px"></input></td>
+        </tr>
+        <tr>
+            <td width="387">7.       ¿Esta Impermeabilizada el área donde está ubicado el vertedero?</td>
+            <td width="312">S/N <input type="checkbox" width="30px"></input></td>
+        </tr>
+        <tr>
+            <td width="387">8.       ¿Se realizan monitoreos de las aguas subterráneas en el relleno sanitario /vertedero?</td>
+            <td width="312">S/N <input type="checkbox" width="30px"></input></td>
+        </tr>
+        <tr>
+            <td width="387">
+                <ul>
+                    <li>Si la respuesta es "SI", ¿cada cuanto tiempo se monitorea?</li>
+                </ul>
+            </td>
+            <td width="312"><input type="text"></input></td>
+        </tr>
+    </tbody>
+</table>
+<p> &nbsp;</p>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="900" align="center" bgcolor="#5F497A"><strong><span style="color:#FFF">IV- Sistema tarifario</span></strong></td>
+        </tr>
+
+    </tbody>
+</table>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="416"><strong>Pregunta</strong></td>
+            <td width="284"><strong>Respuesta</strong></td>
+        </tr>
+        <tr>
+            <td width="416">1.       ¿Colecta la municipalidad tarifa por el servicio de recolección de residuos a hogares?</td>
+            <td width="284">S/N <input type="checkbox" width="30px"></input></td>
+        </tr>
+        <tr>
+            <td width="416">
+                <ul>
+                    <li>Si la respuesta es "SI",    </li>
+                    <li>1) ¿Cuál es el sistema tarifario establecido a hogares?</li>
+                </ul>
+            </td>
+            <td width="284">
+                <p>
+                    <input type="checkbox" name="tariga-hogares"></input> 1) Tarifa fija
+                    <br /> ><input type="checkbox" name="tariga-hogares"></input> 2) Depende de la generación
+                    <br /> ><input type="checkbox" name="tariga-hogares"></input> 3) Otros, especifique <input type="text"></input>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">2)         ¿Cada qué tiempo se cobra por el servicio?</td>
+            <td width="284">
+                <form>
+                    <input type="radio" name="servicio"></input> 1) Semanal
+                    <br /> ><input type="radio" name="servicio"></input> 2)Quincenal
+                    <br /> ><input type="radio" name="servicio"></input> 3)Mensual
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">3)         Método de pago:</td>
+            <td width="284">
+                <p>
+                    <input type="checkbox" name="metodo-pago"></input> 1) En conjunto con la factura el Agua
+                    <br /><input type="checkbox" name="metodo-pago"></input> 2) Con la factura el Electricidad
+                    <br /><input type="checkbox" name="metodo-pago"></input> 3) Van al Ayuntamiento
+                    <br /><input type="checkbox" name="metodo-pago"></input> 4) Por internet
+                    <br /><input type="checkbox" name="metodo-pago"></input> 5) A domicilio
+                    <br /><input type="checkbox" name="metodo-pago"></input> 6) Otros: especifique <input type="text"></input>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">4)         Cantidad de hogares que pagan el servicio:</td>
+            <td width="284">Nº <input type="number" width="30px"></input> % <input type="number" width="30px"></input></td>
+        </tr>
+        <tr>
+            <td width="416">2.       ¿Colecta la municipalidad tarifa por el servicio de recolección de residuos a comercios?</td>
+            <td width="284">S/N <input type="checkbox" width="30px"></input></td>
+        </tr>
+        <tr>
+            <td width="416">
+                <ul>
+                    <li>
+                        Si la respuesta es "SI",
+
+                        1)       
+                    </li>
+                    <li> ¿Cuál es el sistema tarifario establecido a los comercios?</li>
+                </ul>
+            </td>
+            <td width="284">
+                <p>
+                    <input type="checkbox" name="comercio"></input> 1) Tarifa fija<br />
+                    <input type="checkbox" name="comercio"></input> 2) Depende de la generación   <br />
+                    <input type="checkbox" name="comercio"></input> 3) Otros, especifique <input type="text"></input>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">2)         ¿Cada qué tiempo se cobra por el servicio?</td>
+            <td width="284">
+                <p>
+                    <input type="checkbox" name="servicio"></input> 1) Semanal
+                    <br /><input type="checkbox" name="servicio"></input> 2)Quincenal
+                    <br /><input type="checkbox" name="servicio"></input> 3)Mensual
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">3)         Método de pago:</td>
+            <td width="284">
+                <p>
+                    <input type="checkbox" name="pago"></input> 1) En conjunto con la factura el Agua
+                    <br /><input type="checkbox" name="pago"></input> 2) Con la factura el Electricidad
+                    <br /><input type="checkbox" name="pago"></input> 3) Van al Ayuntamiento
+                    <br /><input type="checkbox" name="pago"></input> 4) Por internet
+                    <br /><input type="checkbox" name="pago"></input> 5) A domicilio
+                    <br /><input type="checkbox" name="pago"></input> 6) Otros, especifique <input type="text"></input>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">4)         Cantidad de comercios que pagan el servicio:</td>
+            <td width="284">Nº <input type="number" width="30px"></input> % <input type="number" width="30px"></input></td>
+        </tr>
+        <tr>
+            <td width="416">3.       ¿Colecta la municipalidad tarifa por el servicio de recolección de residuos a industrias?</td>
+            <td width="284">S/N <input type="checkbox" width="30px"></td>
+        </tr>
+        <tr>
+            <td width="416">
+                <ul>
+                    <li> Si la respuesta es "SI",<br /> 1)         ¿Cuál es el sistema tarifario establecido a las industrias?</li>
+                </ul>
+            </td>
+            <td width="284">
+                <p>
+                    <input type="checkbox" name="tarifario-industrias"></input>1) Tarifa fija
+                    <br /><input type="checkbox" name="tarifario-industrias"></input> 2) Depende de la generación
+                    <br /><input type="checkbox" name="tarifario-industrias"></input> 3) Otros, especifique <input type="text"></input>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">2)         ¿Cada qué tiempo se cobra por el servicio?</td>
+            <td width="284">
+                <p>
+                    <input type="checkbox" name="servicio-tiempo"></input>1) Semanal
+                    <br /><input type="checkbox" name="servicio-tiempo"></input> 2)Quincenal
+                    <br /><input type="checkbox" name="servicio-tiempo"></input> 3)Mensual
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">3)         Método de pago:</td>
+            <td width="284">
+                <p>
+                    <br /><input type="checkbox" name="pago-metodo"></input> 1) En conjunto con la factura el Agua
+                    <br /><input type="checkbox" name="pago-metodo"></input> 2) Con la factura el Electricidad
+                    <br /><input type="checkbox" name="pago-metodo"></input> 3) Van al Ayuntamiento
+                    <br /><input type="checkbox" name="pago-metodo"></input> 4) Por internet
+                    <br /><input type="checkbox" name="pago-metodo"></input> 5) A domicilio
+                    <br /><input type="checkbox" name="pago-metodo"></input> 6) Otros, especifique <input type="text"></input>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">4)         Cantidad de industrias que pagan el servicio:</td>
+            <td width="284">Nº <input type="number" width="30px"></input> % <input type="number" width="30px"></input> No Aplica <input type="text" width="30px"></input></td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="900" align="center" bgcolor="#5F497A"><strong><span style="color:#FFF">V- Contratación externa (Subcontratación)</span></strong></td>
+        </tr>
+    </tbody>
+</table>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="416"><strong>Pregunta</strong></td>
+            <td width="284"><strong>Respuesta</strong></td>
+        </tr>
+        <tr>
+            <td width="416">
+                <p>
+                    1. ¿Tiene contratación externa para el servicio de recolección?
+
+                </p>
+                <ul>
+                    <li> Si la respuesta es "SI", favor seleccione la opción aplicable</li>
+                </ul>
+            </td>
+            <td width="284">
+                <p>
+                    S/N <input type="checkbox" width="30px"></input>
+                    <br /><input type="checkbox" name="servicio-recoleccion"></input> 1) De toda la ciudad
+                    <br /><input type="checkbox" name="servicio-recoleccion"></input> 2) Algunas partes de la ciudad
+                    <br /><input type="checkbox" name="servicio-recoleccion"></input> 3) Otros, especifique: <input type="text"></input>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="416">
+                <p>
+                    2. ¿Tiene contratación externa para el tratamiento y reciclaje?
+
+                </p>
+                <ul>
+                    <li> Si la respuesta es "SI", favor seleccione la opción aplicable</li>
+                </ul>
+            </td>
+            <td width="284">
+                S/N <input type="checkbox" width="30px"></input>
+                <br /><input type="checkbox" name="tratamiento-reciclaje"></input> 1) Sólo operaciones
+                <br /><input type="checkbox" name="tratamiento-reciclaje"></input> 2) Operaciones y construcción
+            </td>
+        </tr>
+        <tr>
+            <td width="416">
+                <p>
+                    3. ¿Tiene contratación externa para en el vertedero/relleno sanitario?
+
+                </p>
+                <ul>
+                    <li>Si la respuesta es "SI", favor seleccione la opción aplicable</li>
+                </ul>
+            </td>
+
+            <td width="284">
+                S/N <input type="checkbox" width="30px"></input>
+
+                <br /><input type="checkbox" name="vertedero"></input> 1) Sólo operaciones
+                <br /><input type="checkbox" name="vertedero"></input> 2) Operaciones y construcción
+            </td>
+        </tr>
+    </tbody>
+</table>
+    <p>
+        *Se refiere a contratación de una compañía. No Aplica si solo alquilan los equipos.
+
+        &nbsp;
+    </p>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="900" align="center" bgcolor="#5F497A"><strong><span style="color:#FFF">VI- Presupuesto y balance, Los ingresos y gastos</span></strong></td>
+        </tr>
+    </tbody>
+</table>
+<strong>Formatos de Ingreso</strong>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="34">No.</td>
+            <td colspan="2" width="542">Ítem</td>
+            <td width="117">Ingreso (RD$)</td>
+        </tr>
+        <tr>
+            <td rowspan="4" width="34">1.</td>
+            <td colspan="2" width="542"><strong>Presupuesto del gobierno central</strong></td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="31">1.1</td>
+            <td width="511">Presupuesto del Ministerio de Hacienda.</td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="31">1.2</td>
+            <td width="511">Presupuesto de LMD (si aplica).</td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="31">1.3</td>
+            <td width="511">Presupuesto de otras entidades gubernamentales (especificar si existen).</td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td rowspan="3" width="34">2.</td>
+            <td colspan="2" width="542"><strong>Presupuesto propio del municipio</strong></td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="31">2.1</td>
+            <td width="511">Presupuesto anual del municipio.</td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="31">2.2</td>
+            <td width="511"><input type="text"></input></td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td rowspan="5" width="34">3.</td>
+            <td colspan="2" width="542"><strong>Tarifa de recolección</strong></td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="31">3.1</td>
+            <td width="511">Tarifa de recolección para los hogares.</td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="31">3.2</td>
+            <td width="511">Tarifa de recolección para empresas, instituciones, comercios, etc.</td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="31">3.3</td>
+            <td width="511">Tarifa de recolección de otros generadores de residuos (si existen).</td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="31">3.4</td>
+            <td width="511"><input type="text"></input></td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="34">4.</td>
+            <td colspan="2" width="542"><strong>Subsidio de donantes, ONG y/o proyectos específicos (si existen).</strong></td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="34">5.</td>
+            <td colspan="2" width="542"><strong>Otros (especificar).</strong></td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td colspan="3" width="576"><strong>Total</strong></td>
+            <td width="117"><input type="number"></input></td>
+        </tr>
+    </tbody>
+</table>
+<strong>Formato de Gastos</strong>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="34">No.</td>
+            <td colspan="4" width="542">Ítem</td>
+            <td width="113">Costo (RD$)</td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td rowspan="10" width="34"><strong>1.</strong></td>
+            <td colspan="4" width="542"><strong>Costos iniciales</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td rowspan="6" width="32"><strong>1.1</strong></td>
+            <td colspan="3" width="511"><strong>Costo de construcción, rehabilitación &amp; demolición.</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">1.1.1</td>
+            <td colspan="2" width="469">Instalaciones del barrido de calles.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">1.1.2</td>
+            <td colspan="2" width="469">Instalaciones de recolección y transporte</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">1.1.3</td>
+            <td colspan="2" width="469">Instalaciones de tratamiento intermedio y reciclaje.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">1.1.4</td>
+            <td colspan="2" width="469">Instalaciones de disposición final.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">1.1.5</td>
+            <td colspan="2" width="469">Otras instalaciones.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="32"><strong>1.2</strong></td>
+            <td colspan="3" width="511"><strong>Costo de estudios/encuestas para instalaciones (F/S, EIA, etc.).</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="32"><strong>1.3</strong></td>
+            <td colspan="3" width="511"><strong>Costo de contribución (en el caso de inversión multi-municipal para instalaciones).</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4" width="542"><strong>Subtotal</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td rowspan="23" width="34"><strong>2.</strong></td>
+            <td colspan="4" width="542"><strong>Costos operacionales</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td rowspan="7" width="32"><strong>2.1</strong></td>
+            <td colspan="3" width="511"><strong>Costos de personal.</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.1.1</td>
+            <td colspan="2" width="469">Personal de gestión y administrativo.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.1.2</td>
+            <td colspan="2" width="469">Personal técnico y del campo.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">&nbsp;</td>
+            <td width="52">2.1.2.1</td>
+            <td width="417">Responsable del barrido de calles.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">&nbsp;</td>
+            <td width="52">2.1.2.2</td>
+            <td width="417">Responsable de recolección y transporte.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">&nbsp;</td>
+            <td width="52">2.1.2.3</td>
+            <td width="417">Responsable de tratamiento intermedio y reciclaje.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">&nbsp;</td>
+            <td width="52">2.1.2.4</td>
+            <td width="417">Responsable de disposición final.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td rowspan="5" width="32"><strong>2.2</strong></td>
+            <td colspan="3" width="511"><strong>Costo de operación y mantenimiento.</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.2.1</td>
+            <td colspan="2" width="469">Operación y mantenimiento del barrido de calles.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.2.2</td>
+            <td colspan="2" width="469">Operación y mantenimiento de recolección y transporte.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.2.3</td>
+            <td colspan="2" width="469">Operación y mantenimiento de tratamiento intermedio y reciclaje.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.2.4</td>
+            <td colspan="2" width="469">Operación y mantenimiento de disposición final.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="32"><strong>2.3</strong></td>
+            <td colspan="3" width="511"><strong>Costo de compra de vehículo y equipos.</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td rowspan="6" width="32"><strong>2.4</strong></td>
+            <td colspan="3" width="511">Costo de subcontratación (outsourcing).</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.4.1</td>
+            <td colspan="2" width="469">Subcontratación para el barrido de calles.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.4.2</td>
+            <td colspan="2" width="469">Subcontratación para la recolección y transporte.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.4.3</td>
+            <td colspan="2" width="469">Subcontratación para el tratamiento intermedio y reciclaje.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.4.4</td>
+            <td colspan="2" width="469">Subcontratación para la disposición final.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="41">2.4.5</td>
+            <td colspan="2" width="469">Otras subcontrataciones.</td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="32"><strong>2.5</strong></td>
+            <td colspan="3" width="511"><strong>Costo de contribución (en el caso de operación y mantenimiento multi-municipal).</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="32"><strong>2.6</strong></td>
+            <td colspan="3" width="511"><strong>Costo de encuesta e investigación (excepto para F/S, EIA, etc. para instalaciones).</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4" width="542"><strong>Subtotal</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td width="34"><strong>3.</strong></td>
+            <td colspan="4" width="542"><strong>Otros (especificar)</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="5" width="576"><strong>Total</strong></td>
+            <td width="113"><input type="number"></input></td>
+            <td width="9">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="7" width="699"><strong>VII- Cantidad de personal para los residuos solidos</strong></td>
+        </tr>
+    </tbody>
+</table>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="539"><strong>Pregunta</strong></td>
+            <td width="161"><strong>Respuesta</strong></td>
+        </tr>
+        <tr>
+            <td width="539">1.       ¿Cuantas personas trabajan en la <strong>administración?</strong></td>
+            <td width="161"><input type="number"></input> personas</td>
+        </tr>
+        <tr>
+            <td width="539">2.       ¿Cuantas personas trabajan en la <strong> limpieza de calles</strong>?</td>
+            <td width="161"><input type="number"></input> personas</td>
+        </tr>
+        <tr>
+            <td width="539">3.       ¿Cuantas personas trabajan en la <strong>recolección</strong> de residuos?</td>
+            <td width="161"><input type="number"></input> personas</td>
+        </tr>
+        <tr>
+            <td width="539">4.       ¿Cuantas personas trabajan en el <strong>Tratamiento intermedio</strong> delos residuos sólidos?</td>
+            <td width="161"><input type="number"></input> personas</td>
+        </tr>
+        <tr>
+            <td width="539">5.       ¿Cuantas personas trabajan en la <strong>disposición final/vertedero</strong>?</td>
+            <td width="161"><input type="number"></input> personas</td>
+        </tr>
+    </tbody>
+</table>
+<p> &nbsp;</p>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="900" align="center" bgcolor="#5F497A"><strong><span style="color:#FFF">VIII- Cantidad de residuos solidos</span></strong></td>
+        </tr>
+    </tbody>
+</table>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="539"><strong>Pregunta</strong></td>
+            <td width="161"><strong>Respuesta</strong></td>
+        </tr>
+        <tr>
+            <td width="539">1.       Cantidad de residuos sólidos dispuestos adecuadamente en el  vertedero/relleno sanitario por el municipio (ton/mes )</td>
+            <td width="161"> <input type="number"></input> ton/mes</td>
+        </tr>
+        <tr>
+            <td width="539">2.       Cantidad de residuos sólidos dispuestos adecuadamente en el  vertedero/relleno sanitario por las empresas o industrias, llevadas directamente al vertedero (ton/mes ), si tiene</td>
+            <td width="161"> <input type="number"></input> ton/mes</td>
+        </tr>
+    </tbody>
+</table>
+<p> &nbsp;</p>
+
+<p>
+    Si no tiene los datos de arriba, favor utilizar la siguiente tabla. <strong> </strong>
+</p>
+<p>
+    <strong>[TABLA FORMATO DE CÁLCULO </strong><strong>(por ejemplo)]</strong>
+
+    <strong> </strong>
+</p>
+<p>
+    Pueden utilizar la Tabla I si tiene la capacidad del vehiculo en toneladas.
+
+    Pueden utilizar la Tabla II si no tiene la capacidad de los vehiculos en toneladas.
+
+    Para poder llenar las Tablas I y II, deben de llevar un registro en la Tabla III.
+
+    <br /><br />
+
+    Nombre del vertedero/relleno sanitario      <input type="text"></input><br />
+
+    Nombre de persona responsable                <input type="text"></input><br />
+
+    Periodo (Mes/Año)            Desde     Mes <input type="number" width="30px"></input> Día <input type="number" width="30px"></input> Año <input type="number" width="30px"></input>    Hasta    Mes <input type="number" width="30px"></input> Día <input type="number" width="30px"></input> Año <input type="number" width="30px"></input>
+    <br /><br />
+
+    <strong><center>Tabla I:  Si tiene la capacidad (TONELADAS) de los vehículos</center>    </strong>
+</p>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="123">
+                Tipo  de Residuos
+
+                *Recolección
+
+                *Directa
+            </td>
+            <td width="113">Tipo de Vehículo</td>
+            <td width="113">ID Vehiculo</td>
+            <td width="142">
+                Capacidad
+
+                (Ton)
+
+                *1
+            </td>
+            <td width="85">
+                Numero de Viaje/mes
+
+                *2
+            </td>
+            <td width="123">
+                Cantidad de residuos (ton/mes)
+
+                (=*1 x *2)
+            </td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113">Total (Vc) <input type="number" width="30"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="142"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+    </tbody>
+</table>
+<strong> </strong>
+
+<strong><center>Tabla II:  Si no tiene la capacidad en TONELADAS de los vehículos</center></strong>
+<table width="900">
+    <tbody>
+        <tr>
+            <td width="123">
+                Tipo  de Residuos
+
+                *Recolección
+
+                *Directa
+            </td>
+            <td width="113">Tipo de Vehículo</td>
+            <td width="106">ID Vehiculo</td>
+            <td width="74">
+                Capacidad
+
+                (m3)
+
+                *3
+            </td>
+            <td width="76">
+                Densidad Aparente
+
+                (ton/m3)
+
+                *4
+            </td>
+            <td width="85">
+                Numero de Viaje/mes
+
+                *5
+            </td>
+            <td width="123">
+                Cantidad de residuos (ton/mes)
+
+                (=*3 x *4 x *5)
+            </td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113"><input type="text"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>>
+        </tr>
+        <tr>
+            <td width="123"><input type="text"></input></td>
+            <td width="113">Total (Vc) <input type="number" width="30"></input></td>
+            <td width="106"><input type="text"></input></td>
+            <td width="74"><input type="number"></input></td>
+            <td width="76"><input type="number"></input></td>
+            <td width="85"><input type="number"></input></td>
+            <td width="123"><input type="number"></input></td>
+        </tr>
+    </tbody>
+</table>
+    <input id="Submit1" type="submit" value="Enviar" />
+}

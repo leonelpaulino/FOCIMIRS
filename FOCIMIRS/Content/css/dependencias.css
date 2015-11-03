@@ -1,0 +1,18 @@
+/*Dependencias*/
+.dependencia_funciones h3{
+	font-size: 14px;
+	margin: 10px 0 10px 0;
+	font-weight: bold;
+}
+.dependencia_funciones li{
+	padding-left: 20px;
+}
+.dependencia_funciones li:last-child{
+	margin-bottom: 10px;
+}
+.dependenciasTeaser .glyphicon{
+	margin-right: 5px;
+}
+.dependenciasTeaser .dependenciasContent{
+	margin-left: 20px;
+}

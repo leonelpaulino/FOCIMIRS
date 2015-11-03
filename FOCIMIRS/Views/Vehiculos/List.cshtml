@@ -1,0 +1,60 @@
+﻿@using FOCIMIRS.Models;
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h2>Vehiculos del municipio @ViewBag.municipio</h2>
+    <hr />
+    <div class="col-md-6">
+        <select class="form-control" onchange="list()" id="InMunicipio" name="ComboBox">
+            @foreach (amb_municipio i in ViewBag.Municipios)
+            {
+                if (i.NOM_MUNICIPIO == ViewBag.municipio)
+                {
+                    <option value="@i.NOM_MUNICIPIO" selected> @i.NOM_MUNICIPIO</option>
+
+                }
+                else
+                {
+                    <option value="@i.NOM_MUNICIPIO"> @i.NOM_MUNICIPIO</option>
+                }
+            }
+        </select>
+    </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ficha</th>
+                    <th>Chasis</th>
+                    <th>Color</th>
+                    <th>Densidad</th>
+                    <th>Municipio</th>
+                    <th>Capacidad</th>
+                    <th>Tipo De Vehiculo</th>
+                    <th>Tipo de Residuos</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (amb_vehiculo vehiculo in ViewBag.Vehiculos)
+                {
+                        <tr>
+                            <td> @vehiculo.ficha</td>
+                            <td> @vehiculo.chasis</td>
+                            <td> @vehiculo.color</td>
+                            <td> @vehiculo.densidad</td>
+                            <td> @ViewBag.municipio</td>
+                            <td> @vehiculo.Capacidad</td>
+                            <td> @vehiculo.amb_tipo_vehiculo.nombre</td>
+                            <td> @vehiculo.Tipo_residuos</td>
+                        </tr>
+                }
+            </tbody>
+        </table>
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Js/Vehiculos.js")"></script>
+
+
+
+

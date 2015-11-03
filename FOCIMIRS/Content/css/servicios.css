@@ -1,0 +1,348 @@
+.serviciosContenido .descripcionServicio_dirigidoA{
+	display: block;
+	padding: 15px 15px 10px 15px;
+	font-size: 12px;
+}
+.serviciosContenido .descripcionServicio_dirigidoA > div > h3{
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 0;
+}
+
+/*servicios*/
+.est-servicios{
+	background: #F0F0F0;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.serviciosTmpl > div > div > ul > li > a{
+	font-size: 16px;
+	border-bottom: solid #C9C9C9 1px;
+	padding: 25px 15px;
+	text-align: center;
+	color: #5A5A5A;
+	transition: background .3s;
+	-moz-transition: background 0.3s; /* Firefox 4 */
+	-webkit-transition: background 0.3s; /* Safari and Chrome */
+	-o-transition: background 0.3s; /* Opera */
+}
+.serviciosTmpl > div > div > ul > li > a:hover{
+	background: none;
+}
+.serviciosTmpl > div > div > ul > li > a > span{
+	position: absolute;
+	top: 40%;
+	right: -14px;
+	visibility: hidden;
+	font-size: 16px;
+}
+.serviciosTmpl > div > div > ul > li.active > a{
+	background: #FFFFFF;
+	transition: background .3s;
+	-moz-transition: background 0.3s; /* Firefox 4 */
+	-webkit-transition: background 0.3s; /* Safari and Chrome */
+	-o-transition: background 0.3s; /* Opera */
+}
+.serviciosTmpl > div > div > ul > li.active > a > span{
+	visibility: visible;
+}
+.serviciosTmpl > div > div > ul > li > a > span.col{
+	position: absolute;
+	width: 2px;
+	top: 0;
+	bottom: -1px;
+	right: -2px;
+}
+.est-servicios h3.serviciosMainTitle{
+	margin-top: 0;
+	border-bottom: solid #C9C9C9 1px;
+	padding-bottom: 10px;
+	margin-bottom: 8px;
+}
+.est-servicios h3 > span.title{
+	font-family: "Chunkfive";
+	text-transform: uppercase;
+	font-size: 21px;
+}
+.est-servicios h3 > span > a{
+	font-style: italic;
+	font-size: 14px;
+	line-height: 25px;
+}
+.serviciosContenido > .tab-content {
+	/*border-top: solid #C9C9C9 1px;*/
+	padding-top: 25px;
+}
+.serviciosTmpl > div > div > ul > li.otrosServicios > a{
+	border-bottom-width: 2px; 	
+}
+.serviciosContenido.portada{
+	margin: 30px;
+}
+.serviciosContenido .nombre{
+	font-size: 16px;
+	text-align: right;
+	font-weight: bold;
+	margin-bottom: 7px;
+}
+.serviciosContenido .nombreColoquialServicio{
+	font-size: 16px;
+	text-align: right;
+	color: #606060;
+	font-style: italic;
+	margin-bottom: 20px;
+}
+.serviciosContenido .descripcionServicio_dirigidoA{
+	color: #fff;
+}
+.serviciosContenido .descripcionServicio_dirigidoA > span{
+	display: block;
+	padding: 15px;
+	font-size: 12px;
+}
+.serviciosContenido .descripcionServicio_dirigidoA > span > div > h3{
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 0;
+}
+.serviciosContenido .descripcionServicio_dirigidoA > span > div:nth-child(odd){
+	margin-bottom: 20px;
+}
+.serviciosContenido .servicioOfrecidoPor{ 
+	border-left-style: solid;
+	border-left-width: 5px;
+	padding-left: 10px;
+	font-size: 12px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.serviciosContenido .requerimientos_procedimientos_Servicio{
+	color: #606060;
+	font-size: 12px;
+	padding-bottom: 20px;
+}
+.serviciosContenido .requerimientos_procedimientos_Servicio > div > div > div > h3{
+	font-weight: bold;
+	font-size: 14px;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.serviciosContenido .requerimientos_procedimientos_Servicio > div > div > div.element:first-child > li:last-child{
+	margin-bottom: 15px;
+}
+.serviciosContenido .imagenServicio{
+	padding-right: 0;
+}
+.serviciosContenido .requerimientos_procedimientos_Servicio > div > div > div > li{
+	list-style:none;
+	padding-left: 15px;
+	padding-top: 2.5px;
+	background: url(../images/plus.png) no-repeat left 6.5px;
+}
+@media (max-width: 767px) {
+	.serviciosContenido .imagenServicio{
+		padding-right: 7.5px;
+		margin-bottom: 10px;
+	}
+	.serviciosContenido .imagenServicio > img{
+		width: 100%;
+		height: auto;
+	}
+	.est-servicios > div > div > div > div > div > div > div > h3{
+		border-bottom:solid #C9C9C9 1px;
+		padding-bottom: 5px;
+		margin-bottom: 15px;
+	}
+}
+.botonesInformacion .botonInfo{
+	background: #fff;
+	border:solid #C9C9C9 1px;
+	text-align: center;
+	padding:10px;
+	color: #606060;
+	font-size: 12px;
+	margin-bottom: 15px;
+}
+.botonesInformacion .botonInfo .glyphicon{
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+.botonesInformacion .botonInfo h3{
+	font-weight: bold;
+	font-size: 12px;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.botonesInformacion .botonInfo > p{
+	margin-bottom: 0;
+}
+.botonesInformacion .botonInfo > p > span{
+	text-transform:lowercase;
+}
+.botonesInformacion > div > div:nth-child(odd){
+	padding-right: 7.5px;
+}
+.botonesInformacion > div > div:nth-child(even){
+	padding-left: 7.5px;
+}
+@media (max-width: 767px) {
+	.botonesInformacion > div > div:nth-child(odd){
+		padding-right: 15px;
+	}
+	.botonesInformacion > div > div:nth-child(even){
+		padding-left: 15px;
+	}
+	.est-servicios{
+		padding-top: 17px;
+	}
+}
+.infoAdicionalServicio{
+	padding: 10px;
+	color: #fff;
+	font-size: 12px;
+}
+.infoAdicionalServicio > div > h3{
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-top: 0;
+}
+.infoAdicionalServicio > div > p{
+	margin-bottom: 5px;
+}
+.infoAdicionalServicio > div > p:last-child{
+	margin-bottom: 0;
+}
+/*Movil*/
+div.serviciosTmplMovil div.panel{
+	margin-bottom: 0;
+	border: none;
+	border-radius: 0;
+	background:transparent;
+	-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+	box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+div.serviciosTmplMovil div.panel > div > h4 > a{
+	background: #FFF;
+	transition: background .3s;
+	-moz-transition: background 0.3s; /* Firefox 4 */
+	-webkit-transition: background 0.3s; /* Safari and Chrome */
+	-o-transition: background 0.3s; /* Opera */
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+}
+div.serviciosTmplMovil div.panel > div > h4 > a.collapsed{
+	color:#5A5A5A;
+	border-bottom: solid #C9C9C9 1px;
+}
+div.serviciosTmplMovil div.panel:last-child > div > h4 > a{
+	border-width: 2px;
+}
+.serviciosTmplMovil .panel-heading{
+	padding: 0;
+	border-bottom: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.serviciosTmplMovil .panel-heading a{
+	padding:20px 10px;
+	display: block;
+}
+div.serviciosTmplMovil div.panel > div > h4 > a:hover{
+	text-decoration: none;
+	background: #fff;
+	transition: background .3s;
+	-moz-transition: background 0.3s; /* Firefox 4 */
+	-webkit-transition: background 0.3s; /* Safari and Chrome */
+	-o-transition: background 0.3s; /* Opera */
+}
+div.serviciosTmplMovil .panel-collapse span.glyphicon.glyphicon-play{
+	transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	left: 48%;
+	top: -3px;
+	font-size: 16px;
+}
+div.serviciosTmplMovil .descripcionServicio_dirigidoA{
+	padding-bottom: 10px;
+	color: #fff;
+	font-size: 12px;
+}
+div.serviciosTmplMovil .descripcionServicio_dirigidoA a{
+	color: #fff;
+	font-size: 12px;
+}
+div.serviciosTmplMovil .descripcionServicio_dirigidoA > div > div > div > div > h3,
+div.serviciosTmplMovil .serv > div > div > h3{
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 0;
+}
+div.serviciosTmplMovil .descripcionServicio_dirigidoA > div > div > div.dirigido > div:nth-child(even) {
+	display: none;
+}
+div.serviciosTmplMovil .separador{
+	width: 100%;
+	height: 0;
+	border-bottom: dashed #fff 1px;
+	margin: 10px 0;
+}
+div.serviciosTmplMovil .serv .glyphicon{
+	font-size: 36px;
+}
+div.serviciosTmplMovil .serv > div > div > h3{
+	margin-bottom: 0;
+}
+div.serviciosTmplMovil  .iconG{
+	padding-right: 0;
+}
+div.flechas{
+	background: url(../images/flechas.png) no-repeat right 5px;
+}
+div.cuadroRojo{
+	width: 100%;
+	height: auto;
+	padding: 15px;
+}
+div.cuadroRojo,
+div.cuadroRojo a{
+	color: #fff;
+}
+div.cuadroRojo a{
+	text-decoration: underline;
+}
+div.cuadroRojo p{
+	margin-bottom: 0;
+}
+.serviciosTeaser-nombre{
+	border-bottom: solid #C9C9C9 1px;
+	font-size: 14px;
+	padding: 3px 0;
+}
+/*servicios portada v2*/
+.serviciosBox{
+	text-align: center;
+	margin-top: 18px;
+	/*background: #C9C9C9;*/
+	padding: 23px 0;
+	color: #fff;
+}
+.serviciosBox .glyphicon{
+	font-size: 40px;
+	display: block;
+}
+.serviciosBoxLink,
+.serviciosBoxLink:hover{
+	text-decoration: none;
+	color: #fff;
+}
+.serviciosContenido .descripcionServicio_dirigidoA h3,
+.serviciosContenido .infoAdicionalServicio h3{
+	color: #fff;
+}
+.serviciosContenido .botonesInformacion h3,
+.serviciosContenido .requerimientos_procedimientos_Servicio h3{
+	color: #606060;
+}

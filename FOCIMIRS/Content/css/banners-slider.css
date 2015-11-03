@@ -1,0 +1,112 @@
+/*banners slider*/
+.est-banners{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.est-banners .carousel-inner{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border:0;
+}
+.est-banners h3{
+	margin-bottom: 0;
+}
+.est-banners h3 > span.title{
+	font-family: "Chunkfive";
+	text-transform: uppercase;
+	font-size: 21px;
+}
+.est-banners h3 > span > a{
+	font-style: italic;
+	font-size: 14px;
+	line-height: 25px;
+}
+.est-banners .leer-mas{
+	font-size: 14px;
+	font-weight: bold;
+	display: block;
+	margin-top: 5px;
+}
+.est-banners .noticia{
+	font-size: 12px;
+	color: #606060;
+}
+.est-banners .titulo{
+	font-size: 14px;
+	font-weight: bold;
+	margin: 5px 0;
+}
+.est-banners .col-sm-3 > img{
+    padding: 2px;
+    background: #fff;
+    border:solid #C9C9C9 1px;
+    display: block;
+}
+.est-banners .col-sm-3 > a{
+	padding: 2px;
+	background: #fff;
+	border:solid #C9C9C9 1px;
+	display: block;
+}
+.est-banners .carousel-indicators{
+	position: initial;
+	margin-bottom: 20px;
+}
+.est-banners .carousel-indicators > li{
+	-moz-box-shadow: none; 
+	-webkit-box-shadow: none; 
+	box-shadow: none;
+}
+.est-banners .controlSlide{
+	top: 35%;
+	padding: 10px 0px;
+	-webkit-border-radius:0; 
+	-moz-border-radius:0; 
+	border-radius:0;
+	border-width: 0;
+	font-size: 16px;
+}
+.est-banners .controlSlide:hover .glyphicon{
+	color: #DBDBDB;
+}
+.est-banners .controlSlide span{
+	color: #fff;
+}
+.est-banners .controlSlide.right{
+	margin-right: -16px;
+}
+.est-banners .controlSlide.left{
+	margin-left: -16px;
+}
+@media (max-width: 767px) {
+	.est-banners .imagen > a > img{
+		width: 100%;
+		height: auto;
+	}
+	.est-banners h3{
+		border-bottom:solid #C9C9C9 1px;
+		padding-bottom: 5px;
+		margin-bottom: 0;
+	}
+	.est-banners .separador{
+		border-bottom:solid #C9C9C9 1px;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+	}
+	.est-banners .carousel-inner > div > div:last-child .separador{
+		display: none;
+	}
+	.est-banners .carousel-inner > div > div:last-child{
+		margin-bottom: 8px;
+	}
+}
+@media (max-width: 1199px) {
+	.est-banners .controlSlide{
+		top: 34%;
+	}
+}
+@media (max-width: 991px) {
+	.est-banners .controlSlide{
+		top: 28%;
+	}
+}

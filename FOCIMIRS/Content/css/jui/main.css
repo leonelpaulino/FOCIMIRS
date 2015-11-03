@@ -1,0 +1,12 @@
+.enlaces {
+    background-color: #cfd2d3;
+    clear: both;
+    overflow: hidden;
+}
+.enlaces .moduletable {
+    width: 100%;
+}
+.enlaces img {
+    display: block;
+    text-align: center;
+}

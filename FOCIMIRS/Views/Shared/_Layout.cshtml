@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href=@Url.Content("~/Content/css/bootstrap.min.css") rel="stylesheet">
+    <link href=@Url.Content("~/Content/css/template.css") rel="stylesheet" />
+    <link href=@Url.Content("~/Content/css/estilo.css") rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="~/log.ico">
+    <title>FOCIMIRS</title>
+</head>
+<body>
+    <header class="container cabecera">
+        <div class="row">
+            <div class="col-sm-8 col-xs-12 logo">
+                <a href="/Home/Index"><img class="img-responsive" src="../Content/images/logoambiente-focimirs.png" alt="Ministerio de Medio Ambiente y Recursos Naturales FOCIMIRS" title="Ministerio de Medio Ambiente y Recursos Naturales FOCIMIRS"></a>
+            </div>
+            <div class="col-sm-4 hidden-xs elementos-cabecera">
+                <div class="repDom">
+                    República Dominicana
+                </div>
+                <div class="clearfix"></div>
+                <div class="menu-navegacion-facil">
+                    <div class="menu-menu-cabecera-container">
+                        <ul id="menu-menu-cabecera" class="menu">
+                            <li id="menu-item-25"> @Session["Usuarioid"] &nbsp;&nbsp;</li>
+                            <li id="menu-item-24"> @Html.ActionLink(linkText: "Cerrar Session", actionName: "LogOff", controllerName: "Home", routeValues: null, htmlAttributes: new { Controller = "Login", @style = "color:#008240;" })</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+    <!--Menu-->
+    <section class="menu-principal hidden-xs">
+        <div class="container">
+            <div class="menu-principal-container">
+                <ul id="menu-principal-1" class="menu">
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"> @Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"> @Html.ActionLink("Cuestionario", "Cuestionario", "Home")</li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"> @Html.ActionLink("Tabla de vehiculos", "Index", "Vehiculos")</li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"> @Html.ActionLink("Cuestionarios Llenos", "Index", "Cuestionario")</li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"> @Html.ActionLink("Listado de Vehiculos", "list", "Vehiculos")</li>
+                    @if (Session["Usuarioid"].ToString() == "ambAdmin")
+                    {
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30"> <a href="http://sql01/ReportServer/Pages/ReportViewer.aspx?%2fFocimir%2fMenuReport_Focimir&rs:Command=Render">Reportes </a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div class="col-sm-8">
+        <section id="main">
+            @RenderBody()
+        </section>
+    </div>
+
+    <!--Pie de pagina-->
+    <div class="borderFooter"></div>
+    <section class="footer">
+        <div class="container">
+            <div class="row hidden-xs">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <ul class="nav identidad">
+                        <!-- logo organismo para footer -->
+                        <li class="logo"><img width="67" height="67" title="República Dominicana" alt="República Dominicana" src="../Content/images/logoF.png"></li>
+                        <!-- separador -->
+                        <li class="separador"></li>
+                        <!-- identidad país para el footer -->
+                        <li class="rd"><img width="67" height="67" title="República Dominicana" alt="República Dominicana" src="../Content/images/repDomF.png"></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2 col-sm-offset-2 selloNortic">
+                    <!-- sello NORTIC -->
+                    <span>
+                        <!-- CÓDIGO DE SELLO ESCRITORIO NORTIC A2:2013 -->
+                        <!-- FIN CÓDIGO DE SELLO -->
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p> @Html.ActionLink("FOCIMIRS", "Index", "Home", new { @class = "nombreOrganismo" })</p>
+                    <p class="hidden-xs">Avenida Cayetano Germosén esq. Avenida Gregorio Luperón, Sector El Pedregal, Santo Domingo, R. D.</p>
+                    <p class="hidden-xs">Tel.: (809) 567-4300 ; (809) 567-0555</p>
+                    <p class="hidden-xs"><a href="mailto:oai@ambiente.gob.do?subject=Portal de Transparencia Institucional - Contacto">oai@ambiente.gob.do</a></p>
+                    <p class="hidden-xs">
+
+                    <p></p>
+                    <p class="visible-xs">
+                        <div class="menu-menu-navegacion-cabecera-container">
+                            <ul class="menu text-center visible-xs" id="menu-menu-navegacion-cabecera-1">
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-89"><a href="http://web02/transparencia/">Inicio</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"><a href="http://web02/transparencia/mapa-sitio/">Mapa de sitio</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://web02/transparencia/contacto/">Contacto</a></li>
+                            </ul>
+                        </div>
+                    <p></p>
+                    <p class="boton visible-xs"><a class="subir" href="#"><span class="glyphicon glyphicon-download"></span>Subir</a></p>
+                    <p class="visible-xs selloMobile">
+                        <!-- CÓDIGO DE SELLO MOVIL NORTIC A2:2013 -->
+                        <!-- FIN CÓDIGO DE SELLO -->
+                    </p>
+                    <p>2015. Todos los derechos reservados</p>
+                    <p class="visible-xs">República Dominicana</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
